@@ -1,3 +1,4 @@
+package Hours;
 public class HoursCalculation{
   public double WeekZero =21.0;
   private double weekOne ;

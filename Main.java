@@ -10,6 +10,7 @@ public class Main{
       HoursCalculation weekThree = new HoursCalculation();
       HoursCalculation weekFour = new HoursCalculation();
       HoursCalculation weekFive = new HoursCalculation();
+      HoursCalculation weekSix= new HoursCalculation();
 
       weekTwo.setTimeOut0Saturday(18.25);
       weekTwo.setTimeIn0Saturday(13.00);
@@ -171,6 +172,21 @@ public class Main{
       weekFive.setTimeIn0Thursday(6.00);
       weekFive.setTimeOut0Friday(12.50);
       weekFive.setTimeIn0Friday(6.00);
+
+      weekSix.setTimeOut0Saturday(13.00);
+      weekSix.setTimeIn0Saturday(8.50);
+      weekSix.setTimeOut0Sunday(9.50);
+      weekSix.setTimeIn0Sunday(7.00);
+      weekSix.setTimeOut0Monday(14.00);
+      weekSix.setTimeIn0Monday(6.00);
+      weekSix.setTimeOut0Wednesday(21.25);
+      weekSix.setTimeIn0Wednesday(14.00);
+      weekSix.setTimeOut0Thursday(14.00);
+      weekSix.setTimeIn0Thursday(6.00);
+      weekSix.setTimeOut0Friday(12.50);
+      weekSix.setTimeIn0Friday(6.00);
+
+
      // new way of setting individal day and then createing a calling that time value
       weekFive.setSaturdayTotal(weekFive.dailyTotal(weekFive.getTimeOut0Saturday(), weekFive.getTimeIn0Saturday()));
       weekFive.setMondayTotal(weekFive.dailyTotal(weekFive.getTimeOut0Monday(),weekFive.getTimeIn0Monday()));
@@ -178,6 +194,12 @@ public class Main{
       weekFive.setThursdayTotal(weekFive.dailyTotal(weekFive.getTimeOut0Thursday(),weekFive.getTimeIn0Thursday()));
       weekFive.setFridayTotal(weekFive.dailyTotal(weekFive.getTimeOut0Friday(),weekFive.getTimeIn0Friday()));
 
+      weekSix.setSaturdayTotal(weekSix.dailyTotal(weekSix.getTimeOut0Saturday(),weekSix.getTimeIn0Saturday()));
+      weekSix.setSundayTotal(weekSix.dailyTotal(weekSix.getTimeOut0Sunday(),weekSix.getTimeIn0Sunday()));
+      weekSix.setMondayTotal(weekSix.dailyTotal(weekSix.getTimeOut0Monday(),weekSix.getTimeIn0Monday()));
+      weekSix.setWednesdayTotal(weekSix.dailyTotal(weekSix.getTimeOut0Wednesday(),weekSix.getTimeIn0Wednesday()));
+      weekSix.setThursdayTotal(weekSix.dailyTotal(weekSix.getTimeOut0Thursday(),weekSix.getTimeIn0Thursday()));
+      weekSix.setFridayTotal(weekSix.dailyTotal(weekSix.getTimeOut0Friday(),weekSix.getTimeIn0Friday()));
       // old way of calling and create each individal day
       double weekFourSaturdayTotal= weekFour.dailyTotal(weekFour.getTimeOut0Saturday(),weekFour.getTimeIn0Saturday(),weekOne.getTimeOut1Saturday(),weekOne.getTimeIn1Saturday());
       weekFour.setSaturdayTotal(weekFourSaturdayTotal);
@@ -203,14 +225,14 @@ public class Main{
       weekFour.setWeekTotal(weekFour.weeklyTotal(weekFour.getSaturdayTotal(),weekFour.getSundayTotal(),weekFour.getMondayTotal(), weekOne.getTuesdayTotal(), weekFour.getWednesdayTotal(), weekFour.getThursdayTotal(),weekFour.getFridayTotal()));
       weekFive.setWeekTotal(weekFive.weeklyTotal(weekFive.getSaturdayTotal(),weekFive.getMondayTotal(),weekFive.getWednesdayTotal(),weekFive.getThursdayTotal(),weekFive.getFridayTotal()));
       
-      System.out.println(weekFive.getWeekTotal());
+      weekSix.setWeekTotal(weekSix.weeklyTotal(weekSix.getSaturdayTotal(),weekSix.getSundayTotal(),weekSix.getMondayTotal(),weekSix.getWednesdayTotal(),weekSix.getThursdayTotal(),weekSix.getFridayTotal()));
       //This is used to indcate the total amount of hours that have been used
       weekOne.setSummedHoursForWeeksTotal(weekOne.summedTotalHours(weekZero.WeekZero , weekOne.getWeekTotal()));
       weekTwo.setSummedHoursForWeeksTotal(weekTwo.summedTotalHours(weekZero.WeekZero, weekOne.getWeekTotal(), weekTwo.getWeekTotal()));
       weekThree.setSummedHoursForWeeksTotal(weekThree.summedTotalHours(weekZero.WeekZero, weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal()));
       weekFour.setSummedHoursForWeeksTotal(weekFour.summedTotalHours(weekZero.WeekZero,weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal()));
       weekFive.setSummedHoursForWeeksTotal(weekFive.summedTotalHours(weekOne.WeekZero, weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal()));
-  
+     weekSix.setSummedHoursForWeeksTotal(weekSix.summedTotalHours(weekZero.WeekZero,weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal()));
      // This is used to indicate how many hours I have
      weekZero.setTotalMinusWeeklyTotals(weekZero.summedTotalsHoursMinusTotalHoursLefted(weekZero.WeekZero));
      weekOne.setTotalMinusWeeklyTotals(weekOne.summedTotalsHoursMinusTotalHoursLefted(weekOne.WeekZero,weekOne.getWeekTotal()));
@@ -218,6 +240,7 @@ public class Main{
      weekThree.setTotalMinusWeeklyTotals(weekThree.summedTotalsHoursMinusTotalHoursLefted(weekZero.WeekZero, weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal()));
      weekFour.setTotalMinusWeeklyTotals(weekFour.summedTotalsHoursMinusTotalHoursLefted(weekZero.WeekZero,weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal()));
      weekFive.setTotalMinusWeeklyTotals(weekFive.summedTotalsHoursMinusTotalHoursLefted(weekZero.WeekZero,weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal()));
+     weekSix.setTotalMinusWeeklyTotals(weekSix.summedTotalsHoursMinusTotalHoursLefted(weekZero.WeekZero,weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal()));
      // this is used to indicate how much each paycheck is worth
      weekOne.setPaycheck(weekOne.paycheck(weekZero.WeekZero,weekOne.getWeekTotal()));
      weekThree.setPaycheck(weekThree.paycheck(weekTwo.getWeekTotal(),weekThree.getWeekTotal()));
@@ -229,6 +252,7 @@ public class Main{
       System.out.printf("    4       | Jan 22 - Jan 28  | %.2f  |  %.2f     |    %.2f   | %.2f %n",weekThree.getWeekTotal(),weekThree.getSummedHoursForWeeksTotal(), weekThree.getTotalMinusWeeklyTotals(),weekThree.getPaycheck());
       System.out.printf("    5       | Jan 29 - Feb 04  | %.2f  |  %.2f     |    %.2f   | %n", weekFour.getWeekTotal() ,weekFour.getSummedHoursForWeeksTotal() ,weekFour.getTotalMinusWeeklyTotals() );
       System.out.printf("    6       | Feb 05 - Feb 11  | %.2f  |  %.2f     |    %.2f   | %.2f %n", weekFive.getWeekTotal(), weekFive.getSummedHoursForWeeksTotal(),weekFive.getTotalMinusWeeklyTotals(),weekFive.getPaycheck());
+      System.out.printf("    7       | Feb 12 - Feb 18  | %.2f  |  %.2f     |    %.2f   | %n", weekSix.getWeekTotal(), weekSix.getSummedHoursForWeeksTotal(),weekSix.getTotalMinusWeeklyTotals());
    }
 }
 

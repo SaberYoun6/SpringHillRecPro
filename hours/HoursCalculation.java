@@ -1,8 +1,7 @@
-package Hours;
-public class HoursCalculation{
-  public double WeekZero =21.0;
-  private double weekOne ;
-  private double weekTwo;
+package hours;
+
+public class HoursCalculation extends Hours{ 
+  public static double WeekZero =21.0;
   private double saturdayTotal;
   private double timeIn0Saturday;
   private double timeIn1Saturday;
@@ -175,7 +174,7 @@ public class HoursCalculation{
   public double  getTimeIn1Tuesday(){
      return timeIn1Tuesday;
   }
-  public void setTimeOut0Tuesday (double timeOutTuesday){
+  public void setTimeOut0Tuesday (double timeOut0Tuesday){
       this.timeOut0Tuesday= timeOut0Tuesday ;
   }
   public double getTimeOut0Tuesday(){
@@ -294,32 +293,6 @@ public class HoursCalculation{
     return totalMinusweeklyTotals;
   }
 
-
-/*
-
-  public void getTimeIn0(){
-     return timein0;
-  }
-  pubic void setTimeIn1(double timeIn1){
-    this.timein1 = timein1;
-  }
-  public void  getTimeIn1(doulbe timeIn1){
-    return timeOut1;
-  }
-  public double setTimeOut0(double timeIn0){
-      this.timein0= timeIn0;
-  }
-  public void getTimeOut0(double timeOut0){
-     return timein0;
-  }
-  pubic void getTimeOut1(double timeOn1){
-    this.timeOut1 = timeOut1;
-  }
-  public void setTimeOut1(double timeOut1){
-   return timeOut1;
-  }
-  */
-
   public double weeklyTotal(double ... dailyTotalHours){
  
    double totalAmountOfHours=0.0;
@@ -329,12 +302,13 @@ public class HoursCalculation{
   return totalAmountOfHours;
 
    }
-   
+  @Override
   public double dailyTotal(double out, double in)
   {
     double dailyTot = out - in;
     return  dailyTot;
   }
+  @Override
   public double dailyTotal(double out0 , double in0, double out1, double in1)
   {
     double total0 =   out0 - in0;
@@ -342,6 +316,7 @@ public class HoursCalculation{
     double dailyTot= total0 + total1; 
     return dailyTot;
   }
+ 
   public double summedTotalsHoursMinusTotalHoursLefted(double ... weeks){
     double totalAmountOfHours=1560.0; 
     double summedTotalHours = 0.0;
@@ -360,6 +335,6 @@ public class HoursCalculation{
   public double paycheck(double weekzero, double weekone){
     return weekzero + weekone;
   }
-
+ 
 }
 

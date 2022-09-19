@@ -25,43 +25,35 @@ public class ScansClass {
 	public void close() {
 		
 	}
-	public static final Pattern anydayOrTime = Pattern.compile("[Mon|Tues|Wednes|Thurs|Fri|Satur|Sun]day [d+][st|nd|rd|th] [d+].[d+] - [d+].[d+]$");
+	public static final String pattern = "([Mon|Tues|Wednes|Thurs|Fri|Satur|Sun]day) ([//d+][st|nd|rd|th]) ([//d+].[//d+]) - ([//d+].[//d+])$";
+	public static final Pattern anydayOrTime = Pattern.compile(pattern);
 	 public Hashtable<String,Double> interruptedData( ArrayList <String> message){
 		 Hashtable<String,Double> hts = new Hashtable<>();
 		 String date= null;
 		 String dateIn=null;
 		 String dateOut = null;
 		 String inDate0= null;
-		 String inDate0_1=null;
 		 String outDate0 =null;
-		 String outDate0_1=null;
-		 String inDate0_0_1=null;
-		 String outDate0_0_1=null;
-		 double dateIn0_0_1 = 0.0;
-		 double dateOut0_0_1 =0.0;
+		 double dateIn0 = 0.0;
+		 double dateOut0 =0.0;
 		 
 		 for (String messages : message) 
 		 {
 		 
 			 Matcher matchs = anydayOrTime.matcher(messages);
 			 if(matchs.find()) {
-				 date=matchs.group(0)+matchs.group(1)+matchs.group(2);
-				 inDate0=matchs.group(3);
-				 inDate0_1=matchs.group(4);
-				 outDate0=matchs.group(5);
-				 outDate0_1= matchs.group(6);
+				 date=matchs.group(0)+"  "+matchs.group(1);
+				 inDate0=matchs.group(2);
+				 outDate0=matchs.group(3);
 			 }
-			 
-			 inDate0_0_1=inDate0+"."+inDate0_1;
-			 dateIn0_0_1=Double.valueOf(inDate0_0_1);
-			 outDate0_0_1=outDate0+"."+outDate0_1;
-			 dateOut0_0_1=Double.valueOf(outDate0_0_1);
+			 dateIn0=Double.valueOf(inDate0);
+			 dateOut0=Double.valueOf(outDate0);
 			 
 			 dateIn= date + " in";
 			 dateOut= date + "out";
 		 
-			 hts.put(dateIn,dateIn0_0_1);
-			 hts.put(dateOut,dateOut0_0_1);
+			 hts.put(dateIn,dateIn0);
+			 hts.put(dateOut,dateOut0);
 		 }
 		
 		 

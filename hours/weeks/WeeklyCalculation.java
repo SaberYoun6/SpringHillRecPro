@@ -98,7 +98,7 @@ private final static double totalAmountOfHours =1560.0 ;
   public void setSaturdayTotal(double saturdayTotal){
     this.saturdayTotal = saturdayTotal;
   }
-  public double getSatudayTotal(){
+  public double getSaturdayTotal(){
     return saturdayTotal;
   }
   public void setSundayTotal(double sundayTotal) {
@@ -206,4 +206,3 @@ public double OverTimeValueHours(double week, boolean overTimes) {
 	return overTimed;
 }
 }
-

@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+
+import javax.annotation.processing.FilerException;
+
 import hours.HoursCalculation;
 import hours.weeks.WeeklyCalculation;
 import hours.weeks.scanner.ScansClass;
@@ -21,6 +25,29 @@ public class Main{
 	     HoursCalculation weeksOfDayFourteen = new HoursCalculation();
 	     HoursCalculation weeksOfDayFifteen = new HoursCalculation();
 	     // This is a declarivate statment
+	   /*  ScansClass sc = new ScansClass();
+	     String file = "/home/TragicMoonLIghtFire/git/SpringHillRecPro/dateTimeObj.txt";
+	     ArrayList<String> aList= new ArrayList<>();
+	     try {
+	     aList= sc.ScanFile(file);
+	     }finally {
+	    	 sc.close();
+	     }
+	     */
+	     weeksofDayThriteen.setTimeOut0Saturday(18.25);
+	     weeksofDayThriteen.setTimeIn0Saturday(13.00);
+	     weeksofDayThriteen.setTimeOut0Monday(21.25);
+	     weeksofDayThriteen.setTimeIn0Monday(12.00);
+	     weeksofDayThriteen.setTimeOut0Thursday(14.00);
+	     weeksofDayThriteen.setTimeIn0Thursday(6.00);
+	     weeksofDayThriteen.setTimeOut0Friday(12.00);
+	     weeksofDayThriteen.setTimeIn0Friday(6.00);
+	     weeksofDayThriteen.setTimeOut1Friday(21.00);
+	     weeksofDayThriteen.setTimeIn1Friday(19.00);
+	     
+	     weeksofDayThriteen.setSaturdayTotal(weeksofDayThriteen.dailyTotal(weeksofDayThriteen.getTimeOut0Saturday(),weeksofDayThriteen.getTimeIn0Saturday()));
+	     weeksofDayThriteen.setMondayTotal(weeksofDayThriteen.dailyTotal(weeksofDayThriteen.getTimeOut0Monday(),weeksofDayThriteen.getTimeIn0Monday()));
+	     
 	     
 	     weeksOfDayTwelve.setTimeOut0Monday(21.25);
 	     weeksOfDayTwelve.setTimeIn0Monday(16.00);
@@ -33,6 +60,8 @@ public class Main{
 	     
 	     weeksOfDayTwelve.setMondayTotal(weeksOfDayTwelve.dailyTotal(weeksOfDayTwelve.getTimeOut0Monday(),weeksOfDayTwelve.getTimeIn0Monday()));
 	     weeksOfDayTwelve.setThursdayTotal(weeksOfDayTwelve.dailyTotal(weeksOfDayTwelve.getTimeOut0Thursday(),weeksOfDayTwelve.getTimeIn0Thursday()));
+	     weeksOfDayTwelve.setFridayTotal(weeksOfDayTwelve.dailyTotal(weeksOfDayTwelve.getTimeOut0Friday(), weeksOfDayTwelve.getTimeIn0Friday(), weeksOfDayTwelve.getTimeOut1Friday(), weeksOfDayTwelve.getTimeIn1Friday()));
+	     
 	     
 	     weeksOfDayTen.setTimeOut0Saturday(18.25);
 	     weeksOfDayTen.setTimeIn0Saturday(8.50);
@@ -229,12 +258,13 @@ public class Main{
 	     WeeklyCalculation weekNine = new WeeklyCalculation(weeksOfDayNine.getSaturdayTotal(),weeksOfDayNine.getSundayTotal(),weeksOfDayNine.getMondayTotal(),weeksOfDayNine.getWednesdayTotal());
 	     WeeklyCalculation weekTen = new WeeklyCalculation(weeksOfDayTen.getSaturdayTotal(), weeksOfDayTen.getSundayTotal(), weeksOfDayTen.getMondayTotal(),weeksOfDayTen.getThursdayTotal(),weeksOfDayTen.getFridayTotal());
 	     WeeklyCalculation weekEleven = new WeeklyCalculation(weeksOfDayEleven.getSaturdayTotal(), weeksOfDayEleven.getSundayTotal(), weeksOfDayEleven.getMondayTotal());
-	     WeeklyCalculation weekTwelve = new WeeklyCalculation();
+	     WeeklyCalculation weekTwelve = new WeeklyCalculation(weeksOfDayTwelve.getMondayTotal(),weeksOfDayTwelve.getThursdayTotal(),weeksOfDayTwelve.getFridayTotal());
+	     WeeklyCalculation weekThriteen = new WeeklyCalculation(weeksofDayThriteen.getSaturdayTotal(),weeksofDayThriteen.getMondayTotal());
     //this is used to create indivial weekly totals
 
-	     weekOne.setWeekTotal(weekOne.weeklyTotal(weekOne.getSatudayTotal(),weekOne.getSundayTotal(),weekOne.getMondayTotal(),weekOne.getThursdayTotal()));
-	     weekTwo.setWeekTotal(weekTwo.weeklyTotal(weekTwo.getSatudayTotal(),weekTwo.getSundayTotal(),weekTwo.getMondayTotal(),weekTwo.getThursdayTotal(),weekTwo.getFridayTotal()));
-	     weekThree.setWeekTotal(weekThree.weeklyTotal(weekThree.getSatudayTotal(),weekThree.getSundayTotal(), weekThree.getMondayTotal(), weekThree.getTuesdayTotal(),weekThree.getWednesdayTotal(),weekThree.getThursdayTotal(), weekThree.getFridayTotal())); 
+	     weekOne.setWeekTotal(weekOne.weeklyTotal(weekOne.getSaturdayTotal(),weekOne.getSundayTotal(),weekOne.getMondayTotal(),weekOne.getThursdayTotal()));
+	     weekTwo.setWeekTotal(weekTwo.weeklyTotal(weekTwo.getSaturdayTotal(),weekTwo.getSundayTotal(),weekTwo.getMondayTotal(),weekTwo.getThursdayTotal(),weekTwo.getFridayTotal()));
+	     weekThree.setWeekTotal(weekThree.weeklyTotal(weekThree.getSaturdayTotal(),weekThree.getSundayTotal(), weekThree.getMondayTotal(), weekThree.getTuesdayTotal(),weekThree.getWednesdayTotal(),weekThree.getThursdayTotal(), weekThree.getFridayTotal())); 
 	     
 	     weekFour.setWeekTotal(weekFour.weeklyTotal(weekFour.getSaturdayTotal(),weekFour.getSundayTotal(),weekFour.getMondayTotal(), weekOne.getTuesdayTotal(), weekFour.getWednesdayTotal(), weekFour.getThursdayTotal(),weekFour.getFridayTotal()));
 	     
@@ -242,49 +272,43 @@ public class Main{
 	     weekSix.setWeekTotal(weekSix.weeklyTotal(weekSix.getSaturdayTotal(),weekSix.getSundayTotal(),weekSix.getMondayTotal(),weekSix.getWednesdayTotal(),weekSix.getThursdayTotal(),weekSix.getFridayTotal()));
 	     weekSeven.setWeekTotal(weekSeven.weeklyTotal(weekSeven.getSundayTotal(),weekSeven.getMondayTotal(),weekSeven.getWednesdayTotal(),weekSeven.getThursdayTotal(),weekSeven.getFridayTotal()));
 	     weekEight.setWeekTotal(weekEight.weeklyTotal(weekEight.getSaturdayTotal(),weekEight.getSundayTotal()));
-	     weekNine.setWeekTotal(weekNine.weeklyTotal(weekNine.getSatudayTotal(),weekNine.getSundayTotal(),weekNine.getMondayTotal(),weekNine.getTuesdayTotal()));
-	     weekTen.setWeekTotal(weekTen.weeklyTotal(weekTen.getSatudayTotal(),weekTen.getSundayTotal(),weekTen.getMondayTotal(),weekTen.getThursdayTotal(),weekTen.getFridayTotal()));
-	     weekEleven.setWeekTotal(weekEleven.weeklyTotal(weekEleven.getSatudayTotal(),weekEleven.getSundayTotal(),weekEleven.getMondayTotal()));
-      //This is used to indcate the total amount of hours that have been us
+	     weekNine.setWeekTotal(weekNine.weeklyTotal(weekNine.getSaturdayTotal(),weekNine.getSundayTotal(),weekNine.getMondayTotal(),weekNine.getTuesdayTotal()));
+	     weekTen.setWeekTotal(weekTen.weeklyTotal(weekTen.getSaturdayTotal(),weekTen.getSundayTotal(),weekTen.getMondayTotal(),weekTen.getThursdayTotal(),weekTen.getFridayTotal()));
+	     weekEleven.setWeekTotal(weekEleven.weeklyTotal(weekEleven.getSaturdayTotal(),weekEleven.getSundayTotal(),weekEleven.getMondayTotal()));
+	     weekTwelve.setWeekTotal(weekTwelve.weeklyTotal(weekTwelve.getMondayTotal(),weekTwelve.getThursdayTotal(),weekTwelve.getFridayTotal()));
+	     weekThriteen.setWeekTotal(weekThriteen.weeklyTotal(weekThriteen.getSaturdayTotal(),weekThriteen.getMondayTotal()));
+	     //This is used to indcate the total amount of hours that have been us
       //
 
 	     weekOne.setSummedHoursForWeeksTotal(weekOne.summedTotalHours(WeekZero.getWeekZero() , weekOne.getWeekTotal()));
-	     weekTwo.setSummedHoursForWeeksTotal(weekTwo.summedTotalHours(WeekZero.getWeekZero(), weekOne.getWeekTotal(), weekTwo.getWeekTotal()));
-	     weekThree.setSummedHoursForWeeksTotal(weekThree.summedTotalHours(WeekZero.getWeekZero(), weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal()));
-	
-	     weekFour.setSummedHoursForWeeksTotal(weekFour.summedTotalHours(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal()));
-	
-	     weekFive.setSummedHoursForWeeksTotal(weekFive.summedTotalHours(WeekZero.getWeekZero(), weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal()));
-	     weekSix.setSummedHoursForWeeksTotal(weekSix.summedTotalHours(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal()));
-	     
-	     weekSeven.setSummedHoursForWeeksTotal(weekSeven.summedTotalHours(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal(),weekSeven.getWeekTotal()));
-	     weekEight.setSummedHoursForWeeksTotal(weekEight.summedTotalHours(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal(),weekSeven.getWeekTotal(),weekEight.getWeekTotal()));
-	     weekNine.setSummedHoursForWeeksTotal(weekNine.summedTotalHours(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal(),weekSeven.getWeekTotal(),weekEight.getWeekTotal(),weekNine.getWeekTotal()));
-	     weekTen.setSummedHoursForWeeksTotal(weekTen.summedTotalHours(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal(),weekSeven.getWeekTotal(),weekEight.getWeekTotal(),weekNine.getWeekTotal(),weekTen.getWeekTotal()));
+	     weekTwo.setSummedHoursForWeeksTotal(weekTwo.summedTotalHours( weekOne.getSummedHoursForWeeksTotal(), weekTwo.getWeekTotal()));
+	     weekThree.setSummedHoursForWeeksTotal(weekThree.summedTotalHours(weekTwo.getSummedHoursForWeeksTotal(),weekThree.getWeekTotal()));
+	     weekFour.setSummedHoursForWeeksTotal(weekFour.summedTotalHours(weekThree.getSummedHoursForWeeksTotal(),weekFour.getWeekTotal()));
+	     weekFive.setSummedHoursForWeeksTotal(weekFive.summedTotalHours(weekFour.getSummedHoursForWeeksTotal(),weekFive.getWeekTotal()));
+	     weekSix.setSummedHoursForWeeksTotal(weekSix.summedTotalHours(weekFive.getSummedHoursForWeeksTotal(),weekSix.getWeekTotal()));
+	     weekSeven.setSummedHoursForWeeksTotal(weekSeven.summedTotalHours(weekSix.getSummedHoursForWeeksTotal(),weekSeven.getWeekTotal()));
+	     weekEight.setSummedHoursForWeeksTotal(weekEight.summedTotalHours(weekSeven.getSummedHoursForWeeksTotal(),weekEight.getWeekTotal()));
+	     weekNine.setSummedHoursForWeeksTotal(weekNine.summedTotalHours(weekEight.getSummedHoursForWeeksTotal(),weekNine.getWeekTotal()));
+	     weekTen.setSummedHoursForWeeksTotal(weekTen.summedTotalHours(weekNine.getSummedHoursForWeeksTotal(),weekTen.getWeekTotal()));
 	     weekEleven.setSummedHoursForWeeksTotal(weekEleven.summedTotalHours(weekTen.getSummedHoursForWeeksTotal(),weekEleven.getWeekTotal()));
+	     weekTwelve.setSummedHoursForWeeksTotal(weekTwelve.summedTotalHours(weekEleven.getSummedHoursForWeeksTotal(),weekTwelve.getWeekTotal()));
+	     weekThriteen.setSummedHoursForWeeksTotal(weekThriteen.summedTotalHours(weekTwelve.getSummedHoursForWeeksTotal(),weekThriteen.getWeekTotal()));
 	     // This is used to indicate how many hours I have
   
 	     WeekZero.setTotalMinusWeeklyTotals(WeekZero.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero()));
-     
-	     weekOne.setTotalMinusWeeklyTotals(weekOne.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal()));
-     
-	     weekTwo.setTotalMinusWeeklyTotals(weekTwo.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal()));
-     
-	     weekThree.setTotalMinusWeeklyTotals(weekThree.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(), weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal()));
-	     
-	     weekFour.setTotalMinusWeeklyTotals(weekFour.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal()));
-    
-	     weekFive.setTotalMinusWeeklyTotals(weekFive.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal()));
-     
-	     weekSix.setTotalMinusWeeklyTotals(weekSix.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal()));
-	     
-	     weekSeven.setTotalMinusWeeklyTotals(weekSeven.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal(),weekSeven.getWeekTotal()));
-	     weekEight.setTotalMinusWeeklyTotals(weekEight.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal(),weekSeven.getWeekTotal(),weekEight.getWeekTotal()));
-	     weekNine.setTotalMinusWeeklyTotals(weekNine.summedTotalsHoursMinusTotalHoursLefted(WeekZero.getWeekZero(),weekOne.getWeekTotal(),weekTwo.getWeekTotal(),weekThree.getWeekTotal(),weekFour.getWeekTotal(),weekFive.getWeekTotal(),weekSix.getWeekTotal(),weekSeven.getWeekTotal(),weekEight.getWeekTotal(),weekNine.getWeekTotal()));
+	     weekOne.setTotalMinusWeeklyTotals(weekOne.summedTotalsHoursMinusTotalHoursLefted(weekOne.getSummedHoursForWeeksTotal()));
+	     weekTwo.setTotalMinusWeeklyTotals(weekTwo.summedTotalsHoursMinusTotalHoursLefted(weekTwo.getSummedHoursForWeeksTotal())); 
+	     weekThree.setTotalMinusWeeklyTotals(weekThree.summedTotalsHoursMinusTotalHoursLefted(weekThree.getSummedHoursForWeeksTotal()));
+	     weekFour.setTotalMinusWeeklyTotals(weekFour.summedTotalsHoursMinusTotalHoursLefted(weekFour.getSummedHoursForWeeksTotal()));
+	     weekFive.setTotalMinusWeeklyTotals(weekFive.summedTotalsHoursMinusTotalHoursLefted(weekFive.getSummedHoursForWeeksTotal()));
+	     weekSix.setTotalMinusWeeklyTotals(weekSix.summedTotalsHoursMinusTotalHoursLefted(weekSix.getSummedHoursForWeeksTotal()));
+	     weekSeven.setTotalMinusWeeklyTotals(weekSeven.summedTotalsHoursMinusTotalHoursLefted(weekSeven.getSummedHoursForWeeksTotal()));
+	     weekEight.setTotalMinusWeeklyTotals(weekEight.summedTotalsHoursMinusTotalHoursLefted(weekEight.getSummedHoursForWeeksTotal()));
+	     weekNine.setTotalMinusWeeklyTotals(weekNine.summedTotalsHoursMinusTotalHoursLefted(weekNine.getSummedHoursForWeeksTotal()));
 	     weekTen.setTotalMinusWeeklyTotals(weekTen.summedTotalsHoursMinusTotalHoursLefted(weekTen.getSummedHoursForWeeksTotal()));
 	     weekEleven.setTotalMinusWeeklyTotals(weekEleven.summedTotalsHoursMinusTotalHoursLefted(weekEleven.getSummedHoursForWeeksTotal()));
-	     
-	     
+	     weekTwelve.setTotalMinusWeeklyTotals(weekTwelve.summedTotalsHoursMinusTotalHoursLefted(weekTwelve.getSummedHoursForWeeksTotal()));
+	     weekThriteen.setTotalMinusWeeklyTotals(weekThriteen.summedTotalsHoursMinusTotalHoursLefted(weekThriteen.getSummedHoursForWeeksTotal()));
 	     
 
 	     
@@ -308,6 +332,7 @@ public class Main{
 	     weekSeven.setPaycheck(weekSeven.payChecks(weekSix.getWeekTotal(), weekSeven.getWeekTotal()));
 	     weekNine.setPaycheck(weekNine.paycheck(weekNine.getWeekTotal(), weekEight.getWeekTotal()));
 	     weekEleven.setPaycheck(weekEleven.paycheck(weekTen.getWeekTotal(), weekEleven.getWeekTotal()));
+	     weekThriteen.setPaycheck(weekThriteen.payChecks(weekTwelve.getWeekTotal(), weekThriteen.getWeekTotal()));
 	     //This is the printed statements
 	     System.out.println(" # of weeks |     dates        | hours  | total hours | hours - 1560 | paychecks");  
 	     System.out.printf("    1       | Jan 01 - Jan 07  | %.2f  |   %.2f     |    %.2f   |%n " , WeekZero.getWeekZero(), WeekZero.getWeekZero(), WeekZero.getTotalMinusWeeklyTotals());
@@ -318,15 +343,15 @@ public class Main{
 	     System.out.printf("    6       | Feb 05 - Feb 11  | %.2f  |  %.2f     |    %.2f   | %.2f %n", weekFive.getWeekTotal(), weekFive.getSummedHoursForWeeksTotal(),weekFive.getTotalMinusWeeklyTotals(),weekFive.getPaycheck());
 	     System.out.printf("    7       | Feb 12 - Feb 18  | %.2f  |  %.2f     |    %.2f   | %n", weekSix.getWeekTotal(), weekSix.getSummedHoursForWeeksTotal(),weekSix.getTotalMinusWeeklyTotals());
 	     System.out.printf("    8       | Feb 19 - Feb 24  | %.2f  |  %.2f     |    %.2f   | %.2f %n", weekSeven.getWeekTotal(), weekSeven.getSummedHoursForWeeksTotal(),weekSeven.getTotalMinusWeeklyTotals(),weekSeven.getPaycheck());
-	     System.out.printf("    9       | Feb 25 - Mar 4   | %.2f   |  %.2f     |    %.2f   | %n", weekEight.getWeekTotal(), weekEight.getSummedHoursForWeeksTotal(),weekEight.getTotalMinusWeeklyTotals());
+	     System.out.printf("    9       | Feb 25 - Mar 4   | %.2f   |  %.2f     |    %.2f  | %n", weekEight.getWeekTotal(), weekEight.getSummedHoursForWeeksTotal(),weekEight.getTotalMinusWeeklyTotals());
 	     System.out.printf("   10       | Mar 5  - Mar 11  | %.2f  |  %.2f     |    %.2f   | %.2f %n" ,weekNine.getWeekTotal(), weekNine.getSummedHoursForWeeksTotal(),weekNine.getTotalMinusWeeklyTotals(),weekNine.getPaycheck());
 	     System.out.printf("   11       | Mar 12 - Mar 18  | %.2f  |  %.2f     |    %.2f   | %n ",weekTen.getWeekTotal(), weekTen.getSummedHoursForWeeksTotal(),weekTen.getTotalMinusWeeklyTotals()); 
 	     System.out.printf("  12       | Mar 19 - Mar 25  | %.2f  |  %.2f     |    %.2f   | %.2f %n", weekEleven.getWeekTotal(), weekEleven.getSummedHoursForWeeksTotal(),weekEleven.getTotalMinusWeeklyTotals(),weekEleven.getPaycheck());
-	     /*System.out.printf("   13       | Mar 25 - Apr 1   | %.2f  |  %.2f     |    %.2f  | %n "weekTwelve.getWeekTotal(), weekTwelve.getSummedHoursForWeeksTotal(),weekTwelve.getTotalMinusWeeklyTotals()); 
-	     System.out.printf("   14       | Apr 2  - Apr 8   | %.2f  |  %.2f     |    %.2f  | %.2f %n" weekThriteen.getWeekTotal(), weekThriteen.getSummedHoursForWeeksTotal(),weekThriteen.getTotalMinusWeeklyTotals(),weekThriteen.getPaycheck());
-	     System.out.printf("   15       | Apr 9  - Apr 15  | %.2f  |  %.2f     |    %.2f  | %n "weekTen.getWeekTotal(), weekTen.getSummedHoursForWeeksTotal(),weekTen.getTotalMinusWeeklyTotals()); 
-	     System.out.printf("   16       | Apr 16 - Apr 22  | %.2f  |  %.2f     |    %.2f  | %.2f %n" weekNine.getWeekTotal(), weekNine.getSummedHoursForWeeksTotal(),weekNine.getTotalMinusWeeklyTotals(),weekNine.getPaycheck());
-	     System.out.printf("   17       | Apr 23 - Apr 30  | %.2f  |  %.2f     |    %.2f  | %n "weekTen.getWeekTotal(), weekTen.getSummedHoursForWeeksTotal(),weekTen.getTotalMinusWeeklyTotals()); 
+	     System.out.printf("   13       | Mar 25 - Apr 1   | %.2f  |  %.2f     |    %.2f    | %n ",weekTwelve.getWeekTotal(), weekTwelve.getSummedHoursForWeeksTotal(),weekTwelve.getTotalMinusWeeklyTotals()); 
+	     System.out.printf("   14      | Apr 2  - Apr 8   | %.2f  |  %.2f     |    %.2f    | %.2f %n", weekThriteen.getWeekTotal(), weekThriteen.getSummedHoursForWeeksTotal(),weekThriteen.getTotalMinusWeeklyTotals(),weekThriteen.getPaycheck());
+	     /*System.out.printf("   15       | Apr 9  - Apr 15  | %.2f  |  %.2f     |    %.2f  | %n ",weekTen.getWeekTotal(), weekTen.getSummedHoursForWeeksTotal(),weekTen.getTotalMinusWeeklyTotals()); 
+	     System.out.printf("   16       | Apr 16 - Apr 22  | %.2f  |  %.2f     |    %.2f  | %.2f %n" ,weekNine.getWeekTotal(), weekNine.getSummedHoursForWeeksTotal(),weekNine.getTotalMinusWeeklyTotals(),weekNine.getPaycheck());
+	     System.out.printf("   17       | Apr 23 - Apr 30  | %.2f  |  %.2f     |    %.2f  | %n ",weekTen.getWeekTotal(), weekTen.getSummedHoursForWeeksTotal(),weekTen.getTotalMinusWeeklyTotals()); 
 	     System.out.printf("   18       | May 1  - May 7   | %.2f  |  %.2f     |    %.2f  | %.2f %n" weekNine.getWeekTotal(), weekNine.getSummedHoursForWeeksTotal(),weekNine.getTotalMinusWeeklyTotals(),weekNine.getPaycheck());
 	     System.out.printf("   19       | May 8 - May 14   | %.2f  |  %.2f     |    %.2f  | %n "weekTen.getWeekTotal(), weekTen.getSummedHoursForWeeksTotal(),weekTen.getTotalMinusWeeklyTotals()); 
 	     System.out.printf("   20       | May 15  - May 21 | %.2f  |  %.2f     |    %.2f  | %.2f %n" weekNine.getWeekTotal(), weekNine.getSummedHoursForWeeksTotal(),weekNine.getTotalMinusWeeklyTotals(),weekNine.getPaycheck());

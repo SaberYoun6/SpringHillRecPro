@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Hashtable;
 
 import javax.annotation.processing.FilerException;
 
@@ -7,8 +8,10 @@ import hours.weeks.WeeklyCalculation;
 import hours.weeks.scanner.ScansClass;
 public class Main{
 
-     public static void main(String[] args){
-	     //constructors of class
+     public static void main(String[] args) throws Exception{
+    	 Hashtable<String,Double> hts= new Hashtable<>();
+    	 ArrayList<String> aList= new ArrayList<>();
+    	 //constructors of class
     	 HoursCalculation weeksOfDayOne = new HoursCalculation();
 	     HoursCalculation weeksOfDayTwo = new HoursCalculation();
 	     HoursCalculation weeksOfDayThree = new HoursCalculation();
@@ -25,15 +28,15 @@ public class Main{
 	     HoursCalculation weeksOfDayFourteen = new HoursCalculation();
 	     HoursCalculation weeksOfDayFifteen = new HoursCalculation();
 	     // This is a declarivate statment
-	   /*  ScansClass sc = new ScansClass();
-	     String file = "/home/TragicMoonLIghtFire/git/SpringHillRecPro/dateTimeObj.txt";
-	     ArrayList<String> aList= new ArrayList<>();
-	     try {
-	     aList= sc.ScanFile(file);
-	     }finally {
-	    	 sc.close();
+	     ScansClass sc = new ScansClass();
+	     String file = "/home/TragicLightFIreMoonscapes/git/SpringHillRecPro/dateTimeObj.txt";
+	     aList = sc.ScanFile(file);
+	     hts= sc.interruptedData(aList);
+	     if (hts.containsKey("Friday July 15 in")) {
+	    	 double dataEntry1 = hts.get("Friday July 15 in"); 
+	    	 System.out.println("Friday July 15th in:"+dataEntry1);
 	     }
-	     */
+	  
 	     weeksofDayThriteen.setTimeOut0Saturday(18.25);
 	     weeksofDayThriteen.setTimeIn0Saturday(13.00);
 	     weeksofDayThriteen.setTimeOut0Monday(21.25);

@@ -1,6 +1,9 @@
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Hashtable;
 import java.util.Map;
+=======
+>>>>>>> parent of cb51485 (start adding portion to main)
 
 import javax.annotation.processing.FilerException;
 
@@ -9,10 +12,8 @@ import hours.weeks.WeeklyCalculation;
 import hours.weeks.scanner.ScansClass;
 public class Main{
 
-     public static void main(String[] args) throws Exception{
-    	 Hashtable<String,Double> hts= new Hashtable<>();
-    	 ArrayList<String> aList= new ArrayList<>();
-    	 //constructors of class
+     public static void main(String[] args){
+	     //constructors of class
     	 HoursCalculation weeksOfDayOne = new HoursCalculation();
 	     HoursCalculation weeksOfDayTwo = new HoursCalculation();
 	     HoursCalculation weeksOfDayThree = new HoursCalculation();
@@ -29,6 +30,7 @@ public class Main{
 	     HoursCalculation weeksOfDayFourteen = new HoursCalculation();
 	     HoursCalculation weeksOfDayFifteen = new HoursCalculation();
 	     // This is a declarivate statment
+<<<<<<< HEAD
 	     ScansClass sc = new ScansClass();
 	     //PTF = PATH TO FILE
 	     String file =System.getenv("PTF") ;
@@ -37,8 +39,17 @@ public class Main{
 	     if (hts.containsKey("Friday July 15 in")) {
 	    	 double dataEntry1 = hts.get("Friday July 15 in"); 
 	    	 System.out.println("Friday July 15th in:"+dataEntry1);
+=======
+	   /*  ScansClass sc = new ScansClass();
+	     String file = "/home/TragicMoonLIghtFire/git/SpringHillRecPro/dateTimeObj.txt";
+	     ArrayList<String> aList= new ArrayList<>();
+	     try {
+	     aList= sc.ScanFile(file);
+	     }finally {
+	    	 sc.close();
+>>>>>>> parent of cb51485 (start adding portion to main)
 	     }
-	  
+	     */
 	     weeksofDayThriteen.setTimeOut0Saturday(18.25);
 	     weeksofDayThriteen.setTimeIn0Saturday(13.00);
 	     weeksofDayThriteen.setTimeOut0Monday(21.25);

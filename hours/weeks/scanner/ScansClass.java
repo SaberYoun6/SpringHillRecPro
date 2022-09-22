@@ -63,9 +63,3 @@ public class ScansClass {
 		 
 	 }
 }
-		return hts;
-		 
-		 
-		 
-	 }
-}

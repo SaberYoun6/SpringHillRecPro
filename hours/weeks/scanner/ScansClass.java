@@ -25,8 +25,7 @@ public class ScansClass {
 	public void close() {
 		
 	}
-	public static final String pattern = "([Mon|Tues|Wednes|Thurs|Fri|Satur|Sun]day) ([//d+][st|nd|rd|th]) ([//d+].[//d+]) - ([//d+].[//d+])$";
-	public static final Pattern anydayOrTime = Pattern.compile(pattern);
+	
 	 public Hashtable<String,Double> interruptedData( ArrayList <String> message){
 		 Hashtable<String,Double> hts = new Hashtable<>();
 		 String date= null;

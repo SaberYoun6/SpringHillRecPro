@@ -1,5 +1,5 @@
 package Hours;
-public class HoursCalculation{
+public class HoursCalculation implements Hours{
   public double WeekZero =21.0;
   private double weekOne ;
   private double weekTwo;
@@ -319,7 +319,7 @@ public class HoursCalculation{
    return timeOut1;
   }
   */
-
+  @Override
   public double weeklyTotal(double ... dailyTotalHours){
  
    double totalAmountOfHours=0.0;
@@ -329,12 +329,13 @@ public class HoursCalculation{
   return totalAmountOfHours;
 
    }
-   
+   @Override
   public double dailyTotal(double out, double in)
   {
     double dailyTot = out - in;
     return  dailyTot;
   }
+   @Override
   public double dailyTotal(double out0 , double in0, double out1, double in1)
   {
     double total0 =   out0 - in0;

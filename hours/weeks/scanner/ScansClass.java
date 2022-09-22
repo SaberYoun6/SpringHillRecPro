@@ -1,3 +1,6 @@
+package hours.weeks.scanner;
+
+
 import java.io.File;
 import java.util.Scanner;
 import java.util.regex.Matcher;

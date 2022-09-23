@@ -10,7 +10,7 @@ public class WeeklyCalculation extends HoursCalculation{
 
   private final static double WeekZero= 21.0;
 
-private final static double totalAmountOfHours =1560.0 ;
+  private final static double totalAmountOfHours =1560.0 ;
 
   private double saturdayTotal; 
   private double sundayTotal;

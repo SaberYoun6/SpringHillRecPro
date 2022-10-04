@@ -181,6 +181,9 @@ public class WeeklyCalculations extends HourCalculation implements Hours, Week {
 	public double paycheck(double week0total, double week1total) {
 		return week0total + week1total;
 	}
+	public double paycheck(double weekTotal) {
+		return weekTotal;
+	}
 
 	public double convertHourlyTotalIntoWeeklyTotal(double... hour) {
 

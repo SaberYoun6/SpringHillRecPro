@@ -1,51 +1,9 @@
 package hours;
 
-import java.util.ArrayList;
-
-import exceptions.MonthNotFoundExecption;
 
 public class HourCalculation implements Hours {
-	private double totalSaturdayTime,timeIn0Saturday,timeOut0Saturday,timein1Saturday,timeOut1Saturday,totalSundayTime,timeIn0Sunday,timeOut0Sunday,timeIn1Sunday,timeOut1Sunday,totalMondayTime,timeIn0Monday,timeOut0Monday,timeIn1Monday,timeOut1Monday,totalTuedayTime,timeIn0Tuesady,timeOut0Tuesday,timeIn1Tuesday,timeOut1Tuesday,totalWednesdayTime,timeOut0Wednesday,timeIn0Wednesday,timeOut1Wednesday,timeIn1Wednesday,totalThursdayTime,timeOut0Thursday,timeIn0Thursday,timeOut1Thursday,timeIn1Thursday,totalFridayTime, timeOut0Friday,timeIn0Friday,timeIn1Friday,timeOut1Friday=0.0;
-	public double getTotalSaturdayTime() {
-		return totalSaturdayTime;
-	}
-
-	public void setTotalSaturdayTime(double totalSaturdayTime) {
-		this.totalSaturdayTime = totalSaturdayTime;
-	}
-
-	public double getTotalSundayTime() {
-		return totalSundayTime;
-	}
-
-	public void setTotalSundayTime(double totalSundayTime) {
-		this.totalSundayTime = totalSundayTime;
-	}
-
-	public double getTotalMondayTime() {
-		return totalMondayTime;
-	}
-
-	public void setTotalMondayTime(double totalMondayTime) {
-		this.totalMondayTime = totalMondayTime;
-	}
-
-	public double getTotalTuedayTime() {
-		return totalTuedayTime;
-	}
-
-	public void setTotalTuedayTime(double totalTuedayTime) {
-		this.totalTuedayTime = totalTuedayTime;
-	}
-
-	public double getTotalWednesdayTime() {
-		return totalWednesdayTime;
-	}
-
-	public void setTotalWednesdayTime(double totalWednesdayTime) {
-		this.totalWednesdayTime = totalWednesdayTime;
-	}
-
+	private double timeIn0Saturday,timeOut0Saturday,timein1Saturday,timeOut1Saturday,timeIn0Sunday,timeOut0Sunday,timeIn1Sunday,timeOut1Sunday,timeIn0Monday,timeOut0Monday,timeIn1Monday,timeOut1Monday,timeIn0Tuesady,timeOut0Tuesday,timeIn1Tuesday,timeOut1Tuesday,timeOut0Wednesday,timeIn0Wednesday,timeOut1Wednesday,timeIn1Wednesday,timeOut0Thursday,timeIn0Thursday,timeOut1Thursday,timeIn1Thursday, timeOut0Friday,timeIn0Friday,timeIn1Friday,timeOut1Friday=0.0;
+	
 	public double getTimeOut0Wednesday() {
 		return timeOut0Wednesday;
 	}
@@ -61,71 +19,42 @@ public class HourCalculation implements Hours {
 	public void setTimeIn0Wednesday(double timeIn0Wednesday) {
 		this.timeIn0Wednesday = timeIn0Wednesday;
 	}
-
 	public double getTimeOut1Wednesday() {
 		return timeOut1Wednesday;
 	}
-
 	public void setTimeOut1Wednesday(double timeOut1Wednesday) {
 		this.timeOut1Wednesday = timeOut1Wednesday;
 	}
-
 	public double getTimeIn1Wednesday() {
 		return timeIn1Wednesday;
 	}
-
 	public void setTimeIn1Wednesday(double timeIn1Wednesday) {
 		this.timeIn1Wednesday = timeIn1Wednesday;
 	}
-
-	public double getTotalThursdayTime() {
-		return totalThursdayTime;
-	}
-
-	public void setTotalThursdayTime(double totalThursdayTime) {
-		this.totalThursdayTime = totalThursdayTime;
-	}
-
 	public double getTimeOut0Thursday() {
 		return timeOut0Thursday;
 	}
-
 	public void setTimeOut0Thursday(double timeOut0Thursday) {
 		this.timeOut0Thursday = timeOut0Thursday;
 	}
-
 	public double getTimeIn0Thursday() {
 		return timeIn0Thursday;
 	}
-
 	public void setTimeIn0Thursday(double timeIn0Thursday) {
 		this.timeIn0Thursday = timeIn0Thursday;
 	}
-
 	public double getTimeOut1Thursday() {
 		return timeOut1Thursday;
 	}
-
 	public void setTimeOut1Thursday(double timeOut1Thursday) {
 		this.timeOut1Thursday = timeOut1Thursday;
 	}
-
 	public double getTimeIn1Thursday() {
 		return timeIn1Thursday;
 	}
-
 	public void setTimeIn1Thursday(double timeIn1Thursday) {
 		this.timeIn1Thursday = timeIn1Thursday;
 	}
-
-	public double gettotalFridayTime() {
-		return totalFridayTime;
-	}
-
-	public void settotalFridayTime(double totalFridayTime) {
-		this.totalFridayTime = totalFridayTime;
-	}
-
 	public double getTimeOut0Friday() {
 		return timeOut0Friday;
 	}
@@ -285,12 +214,6 @@ public class HourCalculation implements Hours {
 	public void setTimeOut1Tuesday(double timeOut1Tuesday) {
 		this.timeOut1Tuesday = timeOut1Tuesday;
 		
-	}
-	public double dailyTotal(double in, double out) {
-		return out-in;	
-	}
-	public double dailyTotal(double in, double out ,double in1,double out1) {
-		return (out-in) + (out1 -in1);
 	}
 
 }

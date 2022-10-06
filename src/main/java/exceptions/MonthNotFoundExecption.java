@@ -15,4 +15,7 @@ public class MonthsNotFoundExecption extends Exception {
 	public MonthsNotFoundExecption(String message) {
 		super(message);
 	}
+	public MonthsNotFoundExecption(Throwable cause) {
+		super(cause);
+	}
 }

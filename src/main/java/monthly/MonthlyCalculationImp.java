@@ -2,13 +2,16 @@ package monthly;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Scanner;
+import java.util.logging.Logger;
 
 import exceptions.DateNotFoundExecption;
 import exceptions.MonthsNotFoundExecption;
 
 public class MonthlyCalculationImp implements MonthylyCalculations {
 
-	
+	private static Logger log = Logger.getLogger("Main.class");
+	private Scanner keyboard = new Scanner(System.in);
 	private String january = "January";
 	private String febuaray = "Feburary";
 	private String march;
@@ -183,8 +186,13 @@ public class MonthlyCalculationImp implements MonthylyCalculations {
 			month = getDecember();
 			break;
 			default:
-				
-				monthNotFoundExecption.getLocalizedMessage();
+				try {
+					 int keys =keyboard.nextInt();
+					 this.verifMonth(keys);
+				}catch(Exception MonthsNotFoundExecption)
+				{
+					log.info("mouth was not found");
+				}
 		}
 		return month;
 	}
@@ -197,11 +205,41 @@ public class MonthlyCalculationImp implements MonthylyCalculations {
 	}
 
 	
-	public String verifDay(String dateInfo) {
-		// TODO Auto-generated method stub
-		return null;
+	public String verifDay(int days) {
+	String date=null;
+	switch (days) {
+		case 1:
+			date= "Saturday";
+			break;
+		case 2:
+			date = "Sunday";
+			break;
+		case 3:
+			date = "Monday";
+			break;
+		case 4:
+			date = "Tuesday";
+			break;
+		case 5: 
+			date = "Wednesday";
+			break;
+		case 6:
+			date = "Thursday";
+			break;
+		case 7:
+			date = "Friday";
+			break; 
+		default:
+			try {
+				int keys=keyboard.nextInt();
+				verifDay(keys);
+			}catch (Exception DayNotFoundExecption) {
+				log.info("day was not found");
+			}
+			
 	}
-
+	return date;
+	}
 	public ArrayList<Double> dateVerification(Hashtable<String, Double> dayInfo, String day, String month, String date){
 		ArrayList<Double> al = new ArrayList<Double>(); 
 		try {
@@ -214,9 +252,14 @@ public class MonthlyCalculationImp implements MonthylyCalculations {
 				al.add(dayInfo.get(this.daysInformation(dayInfo) + " "+ month + " 1 " + date + " Out"));
 			}
 		}catch( Exception DateNotFoundExecption) {
-			log.info()
+			log.info("Date was not Found");
 		}
 		return al;
+	}
+	@Override
+	public String verifDay(String dateInfo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

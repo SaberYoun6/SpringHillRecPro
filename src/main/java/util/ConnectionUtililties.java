@@ -12,7 +12,7 @@ public class ConnectionUtililties {
 		super();
 		
 	}
-	public Connection getConnection() throws SQLException, IOException {
+	public static Connection getConnection() throws SQLException, IOException {
 		
 		DriverManager.registerDriver(new org.postgresql.Driver());
 		

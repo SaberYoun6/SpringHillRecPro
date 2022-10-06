@@ -15,5 +15,7 @@ public class DateNotFoundExecption extends Exception{
 		public DateNotFoundExecption(String message) {
 			super(message);
 		}
-
+		DateNotFoundExecption(Throwable cause){
+			super(cause);
+		}
 }

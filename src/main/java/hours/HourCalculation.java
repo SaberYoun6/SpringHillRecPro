@@ -1,8 +1,13 @@
 package hours;
 
+import java.util.Hashtable;
+import java.util.Scanner;
+
+import exceptions.DaysNotFoundExecption;
 
 public class HourCalculation implements Hours {
 	private double timeIn0Saturday,timeOut0Saturday,timein1Saturday,timeOut1Saturday,timeIn0Sunday,timeOut0Sunday,timeIn1Sunday,timeOut1Sunday,timeIn0Monday,timeOut0Monday,timeIn1Monday,timeOut1Monday,timeIn0Tuesady,timeOut0Tuesday,timeIn1Tuesday,timeOut1Tuesday,timeOut0Wednesday,timeIn0Wednesday,timeOut1Wednesday,timeIn1Wednesday,timeOut0Thursday,timeIn0Thursday,timeOut1Thursday,timeIn1Thursday, timeOut0Friday,timeIn0Friday,timeIn1Friday,timeOut1Friday=0.0;
+	
 	
 	public double getTimeOut0Wednesday() {
 		return timeOut0Wednesday;
@@ -214,6 +219,70 @@ public class HourCalculation implements Hours {
 	public void setTimeOut1Tuesday(double timeOut1Tuesday) {
 		this.timeOut1Tuesday = timeOut1Tuesday;
 		
+	}
+	@Override
+	public double [] arrayOfHoursValues( String genDate, String genDateOne,Hashtable<String,Double> dates) {
+		double [] ar= {0.0,0.0,0.0,0.0} ;
+		if (dates.containsKey(genDate + " In")) {
+			ar[0] = dates.get(genDate + " In");
+			ar[1] =dates.get(genDate + " Out");
+		}
+		if(dates.containsKey(genDateOne + " In")) {
+			ar[2] = dates.get(genDateOne + " In");
+			ar[3] = dates.get(genDateOne+ " Out" );
+		}
+		return ar;
+	}
+	@Override
+	public void setHourlyValuesForDates(String genDate,double[] ar) throws DaysNotFoundExecption {
+		String[] genDateValue= genDate.split(" ");
+		int i =0;
+		switch(genDateValue[0]){
+		case "Saturday":
+			this.setTimeIn0Saturday(ar[0]);
+			this.setTimeOut0Saturday(ar[1]);
+			this.setTimein1Saturday(ar[2]);
+			this.setTimeOut1Saturday(ar[3]);
+			break;
+		case "Sunday":
+			this.setTimeIn0Sunday(ar[0]);
+			this.setTimeOut0Sunday(ar[1]);
+			this.setTimeIn1Sunday(ar[2]);
+			this.setTimeOut0Sunday(ar[3]);
+			break;
+		case "Monday":
+			this.setTimeIn0Monday(ar[0]);
+			this.setTimeOut0Monday(ar[1]);
+			this.setTimeIn1Monday(ar[2]);
+			this.setTimeOut1Monday(ar[3]);
+			break;
+		case "Tuesday":
+			this.setTimeIn0Tuesady(ar[0]);
+			this.setTimeOut0Tuesday(ar[1]);
+			this.setTimeIn1Tuesday(ar[2]);
+			this.setTimeOut1Tuesday(ar[3]);
+			break;
+		case "Wednesday":
+			this.setTimeIn0Wednesday(ar[0]);
+			this.setTimeOut0Wednesday(ar[1]);
+			this.setTimeIn1Wednesday(ar[2]);
+			this.setTimeOut1Wednesday(ar[3]);
+			break;
+		case "thursday":
+			this.setTimeIn0Thursday(ar[0]);
+			this.setTimeOut0Thursday(ar[1]);
+			this.setTimeIn1Thursday(ar[2]);
+			this.setTimeOut1Thursday(ar[3]);
+			break;
+		case "Friday" :
+			this.setTimeIn0Friday(ar[0]);
+			this.setTimeOut0Friday(ar[1]);
+			this.setTimeIn1Friday(ar[2]);;
+			this.setTimeOut1Friday(ar[3]);
+			break;
+			default :
+				System.out.println("Day not Found");
+		}
 	}
 
 }

@@ -7,7 +7,38 @@ import exceptions.DaysNotFoundExecption;
 
 public class HourCalculation implements Hours {
 	private double timeIn0Saturday,timeOut0Saturday,timein1Saturday,timeOut1Saturday,timeIn0Sunday,timeOut0Sunday,timeIn1Sunday,timeOut1Sunday,timeIn0Monday,timeOut0Monday,timeIn1Monday,timeOut1Monday,timeIn0Tuesady,timeOut0Tuesday,timeIn1Tuesday,timeOut1Tuesday,timeOut0Wednesday,timeIn0Wednesday,timeOut1Wednesday,timeIn1Wednesday,timeOut0Thursday,timeIn0Thursday,timeOut1Thursday,timeIn1Thursday, timeOut0Friday,timeIn0Friday,timeIn1Friday,timeOut1Friday=0.0;
-	
+	public double getDayIn0() {
+		return dayIn0;
+	}
+
+	public void setDayIn0(double dayIn0) {
+		this.dayIn0 = dayIn0;
+	}
+
+	public double getDayOut0() {
+		return dayOut0;
+	}
+
+	public void setDayOut0(double dayOut0) {
+		this.dayOut0 = dayOut0;
+	}
+
+	public double getDayIn1() {
+		return dayIn1;
+	}
+
+	public void setDayIn1(double dayIn1) {
+		this.dayIn1 = dayIn1;
+	}
+
+	public double getDayOut1() {
+		return dayOut1;
+	}
+
+	public void setDayOut1(double dayOut1) {
+		this.dayOut1 = dayOut1;
+	}
+	private double dayIn0,dayOut0,dayIn1,dayOut1;
 	
 	public double getTimeOut0Wednesday() {
 		return timeOut0Wednesday;
@@ -236,49 +267,76 @@ public class HourCalculation implements Hours {
 	@Override
 	public void setHourlyValuesForDates(String genDate,double[] ar) throws DaysNotFoundExecption {
 		String[] genDateValue= genDate.split(" ");
-		int i =0;
 		switch(genDateValue[0]){
 		case "Saturday":
-			this.setTimeIn0Saturday(ar[0]);
-			this.setTimeOut0Saturday(ar[1]);
-			this.setTimein1Saturday(ar[2]);
-			this.setTimeOut1Saturday(ar[3]);
+			this.setDayIn0(ar[0]);
+			this.setDayOut0(ar[1]);
+			this.setDayIn1(ar[2]);
+			this.setDayOut1(ar[3]);
+			this.setTimeIn0Saturday(getDayIn0());
+			this.setTimeOut0Saturday(getDayOut0());
+			this.setTimein1Saturday(getDayIn1());
+			this.setTimeOut1Saturday(getDayOut1());
 			break;
 		case "Sunday":
-			this.setTimeIn0Sunday(ar[0]);
-			this.setTimeOut0Sunday(ar[1]);
-			this.setTimeIn1Sunday(ar[2]);
-			this.setTimeOut0Sunday(ar[3]);
+			this.setDayIn0(ar[0]);
+			this.setDayOut0(ar[1]);
+			this.setDayIn1(ar[2]);
+			this.setDayOut1(ar[3]);
+			this.setTimeIn0Sunday(getDayIn0());
+			this.setTimeOut0Sunday(getDayOut0());
+			this.setTimeIn1Sunday(getDayIn1());
+			this.setTimeOut0Sunday(getDayOut1());
 			break;
 		case "Monday":
-			this.setTimeIn0Monday(ar[0]);
-			this.setTimeOut0Monday(ar[1]);
-			this.setTimeIn1Monday(ar[2]);
-			this.setTimeOut1Monday(ar[3]);
+			this.setDayIn0(ar[0]);
+			this.setDayOut0(ar[1]);
+			this.setDayIn1(ar[2]);
+			this.setDayOut1(ar[3]);
+			this.setTimeIn0Monday(getDayIn0());
+			this.setTimeOut0Monday(getDayOut0());
+			this.setTimeIn1Monday(getDayIn1());
+			this.setTimeOut1Monday(getDayOut1());
 			break;
 		case "Tuesday":
-			this.setTimeIn0Tuesady(ar[0]);
-			this.setTimeOut0Tuesday(ar[1]);
-			this.setTimeIn1Tuesday(ar[2]);
-			this.setTimeOut1Tuesday(ar[3]);
+			this.setDayIn0(ar[0]);
+			this.setDayOut0(ar[1]);
+			this.setDayIn1(ar[2]);
+			this.setDayOut1(ar[3]);
+			this.setTimeIn0Tuesady(getDayIn0());
+			this.setTimeOut0Tuesday(getDayOut0());
+			this.setTimeIn1Tuesday(getDayIn1());
+			this.setTimeOut1Tuesday(getDayOut1());
 			break;
 		case "Wednesday":
-			this.setTimeIn0Wednesday(ar[0]);
-			this.setTimeOut0Wednesday(ar[1]);
-			this.setTimeIn1Wednesday(ar[2]);
-			this.setTimeOut1Wednesday(ar[3]);
+			this.setDayIn0(ar[0]);
+			this.setDayOut0(ar[1]);
+			this.setDayIn1(ar[2]);
+			this.setDayOut1(ar[3]);
+			this.setTimeIn0Wednesday(getDayIn0());
+			this.setTimeOut0Wednesday(getDayOut0());
+			this.setTimeIn1Wednesday(getDayIn1());
+			this.setTimeOut1Wednesday(getDayOut1());
 			break;
 		case "thursday":
-			this.setTimeIn0Thursday(ar[0]);
-			this.setTimeOut0Thursday(ar[1]);
-			this.setTimeIn1Thursday(ar[2]);
-			this.setTimeOut1Thursday(ar[3]);
+			this.setDayIn0(ar[0]);
+			this.setDayOut0(ar[1]);
+			this.setDayIn1(ar[2]);
+			this.setDayOut1(ar[3]);
+			this.setTimeIn0Thursday(getDayIn0());
+			this.setTimeOut0Thursday(getDayOut0());
+			this.setTimeIn1Thursday(getDayIn1());
+			this.setTimeOut1Thursday(getDayOut1());
 			break;
 		case "Friday" :
-			this.setTimeIn0Friday(ar[0]);
-			this.setTimeOut0Friday(ar[1]);
-			this.setTimeIn1Friday(ar[2]);;
-			this.setTimeOut1Friday(ar[3]);
+			this.setDayIn0(ar[0]);
+			this.setDayOut0(ar[1]);
+			this.setDayIn1(ar[2]);
+			this.setDayOut1(ar[3]);
+			this.setTimeIn0Friday(getDayIn0());
+			this.setTimeOut0Friday(getDayOut0());
+			this.setTimeIn1Friday(getDayIn1());;
+			this.setTimeOut1Friday(getDayOut1());
 			break;
 			default :
 				System.out.println("Day not Found");

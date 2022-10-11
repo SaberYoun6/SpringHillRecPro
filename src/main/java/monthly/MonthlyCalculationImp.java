@@ -1,266 +1,194 @@
 package monthly;
 
+import java.awt.HeadlessException;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import org.postgresql.core.v3.BatchedQuery;
+
+import days.DailyCalculation;
 import exceptions.DateNotFoundExecption;
+import exceptions.DaysNotFoundExecption;
 import exceptions.MonthsNotFoundExecption;
+import hours.HourCalculation;
+import weeks.WeeklyCalculations;
 
 public class MonthlyCalculationImp implements MonthylyCalculations {
 
 	private static Logger log = Logger.getLogger("Main.class");
 	private Scanner keyboard = new Scanner(System.in);
-	private String january = "January";
-	private String febuaray = "Feburary";
-	private String march;
-	private String april;
-	private String may;
-	private String june;
-	private String july;
-	private String august;
-	private String september;
-	private String october;
-	private String november;
-	private String december;
-	public MonthsNotFoundExecption monthNotFoundExecption = new MonthsNotFoundExecption();
+	private double januaryTotal,februaryTotal,marchTotal,aprilTotal,mayTotal,juneTotal,julyTotal,augustTotal,septemberTotal,octoberTotal,novemberTotal,decemberTotal = 0.0;
 	
-	public String daysInformation (Hashtable<String ,Double> dateInfo) {
-		String [] arrayOfdays = {"Saturday","Sunday","Monday","Tuesday","Wednesday","thursay","Friday"};
-		for (String day: arrayOfdays) {
-			if (dateInfo.contains(day)) {
-				return day;
-			}
-		}
-		return null;
-		
-	}
-	public MonthlyCalculationImp() {
-		this.setJanuary("January");
-		this.setFebuaray("Febuaray");
-		this.setMarch("March");
-		this.setApril("April");
-		this.setMay("May");
-		this.setJune("June");
-		this.setJuly("July");
-		this.setAugust("August");
-		this.setSeptember("September");
-		this.setOctober("October");
-		this.setNovember("November");
-		this.setDecember("December");
-	}
 	
-	public String getJanuary() {
-		return january;
+	public double getJanuaryTotal() {
+		return januaryTotal;
 	}
-
-	public void setJanuary(String january) {
-		this.january = january;
+	public void setJanuaryTotal(double januaryTotal) {
+		this.januaryTotal = januaryTotal;
 	}
-
-	public String getFebuaray() {
-		return febuaray;
+	public double getFebruaryTotal() {
+		return februaryTotal;
 	}
-
-	public void setFebuaray(String febuaray) {
-		this.febuaray = febuaray;
+	public void setFebruaryTotal(double februaryTotal) {
+		this.februaryTotal = februaryTotal;
 	}
-
-	public String getMarch() {
-		return march;
+	public double getMarchTotal() {
+		return marchTotal;
 	}
-
-	public void setMarch(String march) {
-		this.march = march;
+	public void setMarchTotal(double marchTotal) {
+		this.marchTotal = marchTotal;
 	}
-	public String getApril() {
-		return april;
+	public double getAprilTotal() {
+		return aprilTotal;
 	}
-
-	public void setApril(String april) {
-		this.april = april;
+	public void setAprilTotal(double aprilTotal) {
+		this.aprilTotal = aprilTotal;
 	}
-
-	public String getMay() {
-		return may;
+	public double getMayTotal() {
+		return mayTotal;
 	}
-
-	public void setMay(String may) {
-		this.may = may;
+	public void setMayTotal(double mayTotal) {
+		this.mayTotal = mayTotal;
 	}
-
-	public String getJune() {
-		return june;
+	public double getJuneTotal() {
+		return juneTotal;
 	}
-
-	public void setJune(String june) {
-		this.june = june;
+	public void setJuneTotal(double juneTotal) {
+		this.juneTotal = juneTotal;
 	}
-
-	public String getJuly() {
-		return july;
+	public double getJulyTotal() {
+		return julyTotal;
 	}
-
-	public void setJuly(String july) {
-		this.july = july;
+	public void setJulyTotal(double julyTotal) {
+		this.julyTotal = julyTotal;
 	}
-
-	public String getAugust() {
-		return august;
+	public double getAugustTotal() {
+		return augustTotal;
 	}
-
-	public void setAugust(String august) {
-		this.august = august;
+	public void setAugustTotal(double augustTotal) {
+		this.augustTotal = augustTotal;
 	}
-
-	public String getSeptember() {
-		return september;
+	public double getSeptemberTotal() {
+		return septemberTotal;
 	}
-
-	public void setSeptember(String september) {
-		this.september = september;
+	public void setSeptemberTotal(double septemberTotal) {
+		this.septemberTotal = septemberTotal;
 	}
-
-	public String getOctober() {
-		return october;
+	public double getOctoberTotal() {
+		return octoberTotal;
 	}
-
-	public void setOctober(String october) {
-		this.october = october;
+	public void setOctoberTotal(double octoberTotal) {
+		this.octoberTotal = octoberTotal;
 	}
-
-	public String getNovember() {
-		return november;
+	public double getNovemberTotal() {
+		return novemberTotal;
 	}
-
-	public void setNovember(String november) {
-		this.november = november;
+	public void setNovemberTotal(double novemberTotal) {
+		this.novemberTotal = novemberTotal;
 	}
-
-	public String getDecember() {
-		return december;
+	public double getDecemberTotal() {
+		return decemberTotal;
 	}
-
-	public void setDecember(String december) {
-		this.december = december;
+	public void setDecemberTotal(double decemberTotal) {
+		this.decemberTotal = decemberTotal;
 	}
-
-	public String verifMonth(int Month) {
-		String month = null;
-		switch (Month){
-		case 1 : 
-			month = getJanuary();
-			break;
-		case 2: 
-			month = getFebuaray();
-			break;
-		case 3:
-			month = getMarch();
-			break;
-		case 4:
-			month = getApril();
-			break;
-		case 5:
-			month = getMay();
-			break;
-		case 6:
-			month = getJune();
-			break;
-		case 7: 
-			month = getJuly();
-			break;
-		case 8: 
-			month = getAugust();
-			break;
-		case 9:
-			month = getSeptember();
-			break;
-		case 10:
-			month = getOctober();
-			break;
-		case 11:
-			month = getNovember();
-			break;
-		case 12:
-			month = getDecember();
-			break;
-			default:
-				try {
-					 int keys =keyboard.nextInt();
-					 this.verifMonth(keys);
-				}catch(Exception MonthsNotFoundExecption)
-				{
-					log.info("mouth was not found");
-				}
-		}
-		return month;
-	}
-
-
-
-	public String verifDate(int date) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	
-	public String verifDay(int days) {
-	String date=null;
-	switch (days) {
-		case 1:
-			date= "Saturday";
-			break;
-		case 2:
-			date = "Sunday";
-			break;
-		case 3:
-			date = "Monday";
-			break;
-		case 4:
-			date = "Tuesday";
-			break;
-		case 5: 
-			date = "Wednesday";
-			break;
-		case 6:
-			date = "Thursday";
-			break;
-		case 7:
-			date = "Friday";
-			break; 
-		default:
-			try {
-				int keys=keyboard.nextInt();
-				verifDay(keys);
-			}catch (Exception DayNotFoundExecption) {
-				log.info("day was not found");
-			}
-			
-	}
-	return date;
-	}
-	public ArrayList<Double> dateVerification(Hashtable<String, Double> dayInfo, String day, String month, String date){
-		ArrayList<Double> al = new ArrayList<Double>(); 
+	public double [] arrangingDates (String genDates, double [] ar ,int size )  {
+		int sizes=size+1;
+		double [] ars= new double [sizes];
+		String [] dates=genDates.split(" ");
+		DailyCalculation todayCal = new DailyCalculation();
+		HourCalculation hourCal = new HourCalculation(); 
 		try {
-			if (dayInfo.contains( month + "  " + date + " In")) {
-				al.add(dayInfo.get(this.daysInformation(dayInfo) + " " + month +" " + date + " In"));
-				al.add(dayInfo.get(this.daysInformation(dayInfo) + " " + month +" " + date + " Out"));
-			}
-			if (dayInfo.contains( month + " 1 " + date + "In")){ 
-				al.add(dayInfo.get(this.daysInformation(dayInfo) + " "+ month + " 1 " + date + " In"));
-				al.add(dayInfo.get(this.daysInformation(dayInfo) + " "+ month + " 1 " + date + " Out"));
-			}
-		}catch( Exception DateNotFoundExecption) {
-			log.info("Date was not Found");
+			hourCal.setHourlyValuesForDates(genDates, ar);
+		} catch (DaysNotFoundExecption e) {
+			e.printStackTrace();
 		}
-		return al;
-	}
+		for (int i = 1 ; i <= sizes ;i++) {
+			if( Integer.getInteger(dates[2]) == 1 && Integer.getInteger(dates[3]) < size) {
+				todayCal.setDailyTotal(todayCal.hourlyConvertedIntoDaily(hourCal.getDayIn0(), hourCal.getDayOut0(), hourCal.getDayIn1(), hourCal.getDayOut1() ));
+				ars[i]=todayCal.getDailyTotal();
+				if  (Integer.getInteger(dates[2]) <= size) {
+					todayCal.setDailyTotal(todayCal.hourlyConvertedIntoDaily(hourCal.getDayIn0(),hourCal.getDayOut0()));
+					ars[i]=todayCal.getDailyTotal();	
+				}
+			}
+		}
+		return ars;
+		}
+			
 	@Override
-	public String verifDay(String dateInfo) {
-		// TODO Auto-generated method stub
-		return null;
+	public double [] monthName(String genDate, double[] ar) {
+		String [] genericDates = genDate.split(" ");
+		double [] monthlyTotality = new double [12];
+		switch (genericDates[1]) {
+		case "January":
+			this.setJanuaryTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[0] = getJanuaryTotal();
+			break;
+		case "February":
+			this.setFebruaryTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[1]= getFebruaryTotal();
+			break;
+		case "March": 
+			this.setMarchTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[2]=getMarchTotal();
+			break;
+		case "April":
+			for (double dates : ar) 
+			this.setAprilTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[3]=getAprilTotal();
+			break;
+		case "May":
+			this.setMayTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[4]=getMayTotal();
+			break; 
+		case "June":
+			this.setJuneTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[5]= getJuneTotal();
+			break;
+		case "July" : 
+			this.setJulyTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[6]=getJulyTotal();
+			break;
+		case "August":
+
+			this.setAugustTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[7]=getAugustTotal();
+			break;
+		case "September":
+			this.setSeptemberTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[8]=getSeptemberTotal();
+			break;
+		case "October":
+		
+				this.setOctoberTotal(dailyConvertMonthlyTotal(ar));
+				monthlyTotality[9]= getOctoberTotal();
+				break;
+		case "November":
+			this.setNovemberTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[10]= getNovemberTotal();
+			break;
+		case "December":
+			this.setDecemberTotal(dailyConvertMonthlyTotal(ar));
+			monthlyTotality[11]=getDecemberTotal();
+			break;
+		default:
+			System.out.println("they error occured month not found ");
 	}
+		return monthlyTotality;
+	}
+		
+		@Override
+		public double dailyConvertMonthlyTotal(double[] days) {
+		  double MonthlyTotal = 0.0;
+		  for (double day: days) {
+			  MonthlyTotal= MonthlyTotal + day;
+		  }
+			return MonthlyTotal;
+		}
+		
 
 
 }

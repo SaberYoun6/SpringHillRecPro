@@ -18,9 +18,9 @@ import weeks.WeeklyCalculations;
 public class MonthlyCalculationImp implements MonthylyCalculations {
 
 	private static Logger log = Logger.getLogger("Main.class");
-	private Scanner keyboard = new Scanner(System.in);
+	//private Scanner keyboard = new Scanner(System.in);
 	private double januaryTotal,februaryTotal,marchTotal,aprilTotal,mayTotal,juneTotal,julyTotal,augustTotal,septemberTotal,octoberTotal,novemberTotal,decemberTotal = 0.0;
-	
+	private double weekOne,weekTwo,weekThree,weekFour,afewdays=0.0;
 	
 	public double getJanuaryTotal() {
 		return januaryTotal;
@@ -93,6 +93,36 @@ public class MonthlyCalculationImp implements MonthylyCalculations {
 	}
 	public void setDecemberTotal(double decemberTotal) {
 		this.decemberTotal = decemberTotal;
+	}
+	public double getWeekOne() {
+		return weekOne;
+	}
+	public void setWeekOne(double weekOne) {
+		this.weekOne = weekOne;
+	}
+	public double getWeekTwo() {
+		return weekTwo;
+	}
+	public void setWeekTwo(double weekTwo) {
+		this.weekTwo = weekTwo;
+	}
+	public double getWeekThree() {
+		return weekThree;
+	}
+	public void setWeekThree(double weekThree) {
+		this.weekThree = weekThree;
+	}
+	public double getWeekFour() {
+		return weekFour;
+	}
+	public void setWeekFour(double weekFour) {
+		this.weekFour = weekFour;
+	}
+	public double getAfewdays() {
+		return afewdays;
+	}
+	public void setAfewdays(double afewdays) {
+		this.afewdays = afewdays;
 	}
 	public double [] arrangingDates (String genDates, double [] ar ,int size )  {
 		int sizes=size+1;

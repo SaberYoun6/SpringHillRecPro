@@ -343,4 +343,14 @@ public class HourCalculation implements Hours {
 		}
 	}
 
+	@Override
+	public double[] arrayOfHoursValues(String genDate, Hashtable<String, Double> dates) {
+		double [] ar =  new double [4];
+		if (dates.containsKey(genDate + " In")) {
+			ar[0] = dates.get(genDate + " In");
+			ar[1] =dates.get(genDate + " Out");
+		}
+		return ar;
+	}
+
 }

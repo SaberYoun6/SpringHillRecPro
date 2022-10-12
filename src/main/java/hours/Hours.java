@@ -7,4 +7,5 @@ import exceptions.DaysNotFoundExecption;
 public interface Hours {
 	void setHourlyValuesForDates(String genDate, double [] ar) throws DaysNotFoundExecption;
 	double[] arrayOfHoursValues(String genDate, String genDateOne, Hashtable<String, Double> dates) ;
+	double[] arrayOfHoursValues(String genDate, Hashtable< String, Double> dates);
 }

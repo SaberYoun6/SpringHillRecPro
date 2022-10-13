@@ -420,7 +420,11 @@ public class Main {
 		 DailyCalculation datesOFweekthriteen = new DailyCalculation();
 		 DailyCalculation datesOfWeekforteenth = new DailyCalculation();
 		 DailyCalculation datesOfWeekFifteenth = new DailyCalculation();
+		 DailyCalculation datesOFweekSixteenth = new DailyCalculation();
+		 DailyCalculation datesOfWeekseventeenth = new DailyCalculation();
 		 
+		 DailyCalculation datesOfWeekTwentyFifith = new DailyCalculation();
+		 DailyCalculation datesOfWeekTwentySeventh = new DailyCalculation();
 		 DailyCalculation datesOfWeekTwentyEigth = new DailyCalculation();
 		 DailyCalculation datesOfWeekThirtieth = new DailyCalculation();
 		 DailyCalculation datesOFthrityFirst = new DailyCalculation();
@@ -513,17 +517,17 @@ public class Main {
 		 datesOfWeekFifteenth.setWednesdayTotal(datesOfWeekFifteenth.hourlyConvertedIntoDaily(daysOfWeeksFifteenth.getTimeIn0Wednesday(), daysOfWeeksFifteenth.getTimeOut0Wednesday()));
 		 datesOfWeekFifteenth.setThursdayTotal(datesOfWeekFifteenth.hourlyConvertedIntoDaily(daysOfWeeksFifteenth.getTimeIn0Thursday(), daysOfWeeksFifteenth.getTimeOut0Thursday()));
 		 datesOfWeekFifteenth.setFridayTotal(datesOfWeekFifteenth.hourlyConvertedIntoDaily(daysOfWeeksFifteenth.getTimeIn0Friday(), daysOfWeeksFifteenth.getTimeOut0Friday())); 
-		 /*
-	     daysOfWeeksSixteenth.setTotalSundayTime(daysOfWeeksSixteenth.dailyTotal(daysOfWeeksSixteenth.getTimeIn0Sunday(), daysOfWeeksSixteenth.getTimeOut0Sunday()));
-	 	 daysOfWeeksSixteenth.setTotalMondayTime(daysOfWeeksSixteenth.dailyTotal(daysOfWeeksSixteenth.getTimeIn0Monday(), daysOfWeeksSixteenth.getTimeOut0Monday(), daysOfWeeksSixteenth.getTimeIn1Monday(), daysOfWeeksSixteenth.getTimeOut1Monday()));
-		 daysOfWeeksSixteenth.setTotalWednesdayTime(daysOfWeeksSixteenth.dailyTotal(daysOfWeeksSixteenth.getTimeIn0Wednesday(), daysOfWeeksSixteenth.getTimeOut0Wednesday()));
-		 daysOfWeeksSixteenth.settotalFridayTime(daysOfWeeksSixteenth.dailyTotal(daysOfWeeksSixteenth.getTimeIn0Friday(), daysOfWeeksSixteenth.getTimeOut0Friday()));
-		 /*
-		 daysOfWeekSeventeenth.setTotalSundayTime(daysOfWeekSeventeenth.dailyTotal(daysOfWeekSeventeenth.getTimeIn0Sunday(), daysOfWeekSeventeenth.getTimeOut0Sunday()));
-		 daysOfWeekSeventeenth.setTotalMondayTime(daysOfWeekSeventeenth.dailyTotal(daysOfWeekSeventeenth.getTimeIn0Monday(), daysOfWeekSeventeenth.getTimeOut0Monday(), daysOfWeekSeventeenth.getTimeIn1Monday(),daysOfWeekSeventeenth.getTimeOut1Monday()));
-		 daysOfWeekSeventeenth.setTotalWednesdayTime(daysOfWeekSeventeenth.dailyTotal(daysOfWeekSeventeenth.getTimeIn0Wednesday(), daysOfWeekSeventeenth.getTimeOut0Wednesday()));
-		 daysOfWeekSeventeenth.setTotalThursdayTime(daysOfWeekSeventeenth.dailyTotal(daysOfWeekSeventeenth.getTimeIn0Thursday(), daysOfWeekSeventeenth.getTimeOut0Thursday()));
-		 daysOfWeekSeventeenth.settotalFridayTime(daysOfWeekSeventeenth.dailyTotal(daysOfWeekSeventeenth.getTimeIn0Friday(), daysOfWeekSeventeenth.getTimeOut0Friday()));
+		 
+	     datesOFweekSixteenth.setSundayTotal(datesOFweekSixteenth.hourlyConvertedIntoDaily(daysOfWeeksSixteenth.getTimeIn0Sunday(), daysOfWeeksSixteenth.getTimeOut0Sunday()));
+	     datesOFweekSixteenth.setMondayTotal(datesOFweekSixteenth.hourlyConvertedIntoDaily(daysOfWeeksSixteenth.getTimeIn0Monday(), daysOfWeeksSixteenth.getTimeOut0Monday(), daysOfWeeksSixteenth.getTimeIn1Monday(), daysOfWeeksSixteenth.getTimeOut1Monday()));
+	     datesOFweekSixteenth.setWednesdayTotal(datesOFweekSixteenth.hourlyConvertedIntoDaily(daysOfWeeksSixteenth.getTimeIn0Wednesday(), daysOfWeeksSixteenth.getTimeOut0Wednesday()));
+	     datesOFweekSixteenth.setFridayTotal(datesOFweekSixteenth.hourlyConvertedIntoDaily(daysOfWeeksSixteenth.getTimeIn0Friday(), daysOfWeeksSixteenth.getTimeOut0Friday()));
+		 
+	     datesOfWeekseventeenth.setSundayTotal(datesOfWeekseventeenth.hourlyConvertedIntoDaily(daysOfWeekSeventeenth.getTimeIn0Sunday(), daysOfWeekSeventeenth.getTimeOut0Sunday()));
+	     datesOfWeekseventeenth.setMondayTotal(datesOfWeekseventeenth.hourlyConvertedIntoDaily(daysOfWeekSeventeenth.getTimeIn0Monday(), daysOfWeekSeventeenth.getTimeOut0Monday(), daysOfWeekSeventeenth.getTimeIn1Monday(),daysOfWeekSeventeenth.getTimeOut1Monday()));
+	     datesOfWeekseventeenth.setWednesdayTotal(datesOfWeekseventeenth.hourlyConvertedIntoDaily(daysOfWeekSeventeenth.getTimeIn0Wednesday(), daysOfWeekSeventeenth.getTimeOut0Wednesday()));
+	     datesOfWeekseventeenth.setThursdayTotal(datesOfWeekseventeenth.hourlyConvertedIntoDaily(daysOfWeekSeventeenth.getTimeIn0Thursday(), daysOfWeekSeventeenth.getTimeOut0Thursday()));
+	     datesOfWeekseventeenth.setFridayTotal(datesOfWeekseventeenth.hourlyConvertedIntoDaily(daysOfWeekSeventeenth.getTimeIn0Friday(), daysOfWeekSeventeenth.getTimeOut0Friday()));
 		
 		 /*
 		 daysOfWeekEightteenth.setTotalSundayTime(daysOfWeekEightteenth.dailyTotal(daysOfWeekEightteenth.getTimeIn0Sunday(), daysOfWeekEightteenth.getTimeOut0Sunday()));
@@ -566,9 +570,9 @@ public class Main {
 		 daysOfWeeksTwentyFifith.setTotalSaturdayTime(daysOfWeeksTwentyFifith.dailyTotal(daysOfWeeksTwentyFifith.getTimeIn0Saturday(), daysOfWeeksTwentyFifith.getTimeOut0Saturday()));
 		 daysOfWeeksTwentyFifith.setTotalSundayTime(daysOfWeeksTwentyFifith.dailyTotal(daysOfWeeksTwentyFifith.getTimeIn0Sunday(), daysOfWeeksTwentyFifith.getTimeOut0Sunday()));
 		 daysOfWeeksTwentyFifith.setTotalThursdayTime(daysOfWeeksTwentyFifith.dailyTotal(daysOfWeeksTwentyFifith.getTimeIn0Thursday(), daysOfWeeksTwentyFifith.getTimeOut0Thursday()));
-		  
-		 dayOfWeeksTwentySeventh.settotalFridayTime(dayOfWeeksTwentySeventh.dailyTotal(dayOfWeeksTwentySeventh.getTimeIn0Friday(), dayOfWeeksTwentySeventh.getTimeOut0Friday()));
-		*/
+		 */ 
+		 datesOfWeekTwentySeventh.setFridayTotal(datesOfWeekTwentySeventh.hourlyConvertedIntoDaily(dayOfWeeksTwentySeventh.getTimeIn0Friday(), dayOfWeeksTwentySeventh.getTimeOut0Friday()));
+		
 		 datesOfWeekTwentyEigth.setMondayTotal(datesOfWeekTwentyEigth.hourlyConvertedIntoDaily(daysOfWeeksTwentyEighth.getTimeIn0Monday(), daysOfWeeksTwentyEighth.getTimeOut0Monday()));
 		 datesOfWeekTwentyEigth.setTuesdayTotal(datesOfWeekTwentyEigth.hourlyConvertedIntoDaily(daysOfWeeksTwentyEighth.getTimeIn0Tuesady(), daysOfWeeksTwentyEighth.getTimeOut0Tuesday()));
 		 datesOfWeekTwentyEigth.setWednesdayTotal(datesOfWeekTwentyEigth.hourlyConvertedIntoDaily(daysOfWeeksTwentyEighth.getTimeIn0Wednesday(), daysOfWeeksTwentyEighth.getTimeOut0Wednesday()));
@@ -607,8 +611,8 @@ public class Main {
 		 WeeklyCalculations weekThriteen = new WeeklyCalculations(datesOFweekthriteen.getSaturdayTotal(),datesOFweekthriteen.getMondayTotal(),datesOFweekthriteen.getThursdayTotal(),datesOFweekthriteen.getFridayTotal());
 	     WeeklyCalculations weekForteenth = new WeeklyCalculations(datesOfWeekforteenth.getSaturdayTotal(),datesOfWeekforteenth.getSundayTotal(),datesOfWeekforteenth.getMondayTotal(),datesOfWeekforteenth.getTuesdayTotal(),datesOfWeekforteenth.getWednesdayTotal(),datesOfWeekforteenth.getThursdayTotal(),datesOfWeekforteenth.getFridayTotal());
 	     WeeklyCalculations weekFifteenth = new WeeklyCalculations(datesOfWeekFifteenth.getMondayTotal(),datesOfWeekFifteenth.getWednesdayTotal(),datesOfWeekFifteenth.getThursdayTotal(),datesOfWeekFifteenth.getFridayTotal());
-	     /*WeeklyCalculations weekSixteenth= new WeeklyCalculations(daysOfWeeksSixteenth.getTotalSundayTime(),daysOfWeeksSixteenth.getTotalMondayTime(),daysOfWeeksSixteenth.getTotalWednesdayTime(),daysOfWeeksSixteenth.gettotalFridayTime());
-	     /*WeeklyCalculations weekSeventeenth = new WeeklyCalculations(daysOfWeekSeventeenth.getTotalSundayTime(), daysOfWeekSeventeenth.getTotalMondayTime(), daysOfWeekSeventeenth.getTotalWednesdayTime(), daysOfWeekSeventeenth.getTotalThursdayTime(), daysOfWeekSeventeenth.gettotalFridayTime());
+	     WeeklyCalculations weekSixteenth= new WeeklyCalculations(datesOFweekSixteenth.getSundayTotal(),datesOFweekSixteenth.getMondayTotal(),datesOFweekSixteenth.getWednesdayTotal(),datesOFweekSixteenth.getFridayTotal());
+	     WeeklyCalculations weekSeventeenth = new WeeklyCalculations(datesOfWeekseventeenth.getSundayTotal(), datesOfWeekseventeenth.getMondayTotal(), datesOfWeekseventeenth.getWednesdayTotal(), datesOfWeekseventeenth.getThursdayTotal(), datesOfWeekseventeenth.getFridayTotal());
 	     /*WeeklyCalculations weekEightteenth = new WeeklyCalculations(daysOfWeekEightteenth.getTotalSundayTime(),daysOfWeekEightteenth.getTotalMondayTime(),daysOfWeekEightteenth.getTotalTuedayTime(),daysOfWeekEightteenth.getTotalWednesdayTime(),daysOfWeekEightteenth.gettotalFridayTime());
 	     WeeklyCalculations weekNinteenth = new WeeklyCalculations(daysOfWeeksNinteenth.getTotalSundayTime(), daysOfWeeksNinteenth.getTotalMondayTime(), daysOfWeeksNinteenth.getTotalTuedayTime(), daysOfWeeksNinteenth.getTotalWednesdayTime(), daysOfWeeksNinteenth.gettotalFridayTime());
 	     WeeklyCalculations weekTwentyth = new WeeklyCalculations(daysOfWeeksTwentyth.getTotalSaturdayTime(),daysOfWeeksTwentyth.getTotalMondayTime(),daysOfWeeksTwentyth.getTotalTuedayTime(),daysOfWeeksTwentyth.getTotalWednesdayTime(),daysOfWeeksTwentyth.gettotalFridayTime());
@@ -617,9 +621,9 @@ public class Main {
 	     WeeklyCalculations weekTwentyThird  = new WeeklyCalculations(daysOfWeeksTwentythird.getTotalMondayTime(), daysOfWeeksTwentythird.getTotalTuedayTime(), daysOfWeeksTwentythird.getTotalWednesdayTime(), daysOfWeeksTwentythird.getTotalThursdayTime(), daysOfWeeksTwentythird.gettotalFridayTime());
 	     WeeklyCalculations weekTwentyFourth = new WeeklyCalculations(daysOfWeeksTwentyFourth.getTotalMondayTime(), daysOfWeeksTwentyFourth.getTotalTuedayTime(), daysOfWeeksTwentyFourth.getTotalThursdayTime(),daysOfWeeksTwentyFourth.gettotalFridayTime());
 	     WeeklyCalculations weekTwentyFifith = new WeeklyCalculations(daysOfWeeksTwentyFifith.getTotalSaturdayTime(), daysOfWeeksTwentyFifith.getTotalSundayTime(), daysOfWeeksTwentyFifith.getTotalThursdayTime());
-	     WeeklyCalculations weekTwentySixth = new WeeklyCalculations();
-	     WeeklyCalculations weekTwentySeventh= new WeeklyCalculations(dayOfWeeksTwentySeventh.gettotalFridayTime());
 	     */
+	     WeeklyCalculations weekTwentySixth = new WeeklyCalculations();
+	     WeeklyCalculations weekTwentySeventh= new WeeklyCalculations(datesOfWeekTwentySeventh.getFridayTotal());
 	     WeeklyCalculations weekTwentyEighth = new WeeklyCalculations(datesOfWeekTwentyEigth.getMondayTotal(), datesOfWeekTwentyEigth.getTuesdayTotal(), datesOfWeekTwentyEigth.getWednesdayTotal(), datesOfWeekTwentyEigth.getThursdayTotal());
 	     WeeklyCalculations weekTwentyNinth = new WeeklyCalculations();
 	     WeeklyCalculations weekThirtieth = new WeeklyCalculations(datesOfWeekThirtieth.getSaturdayTotal());
@@ -643,8 +647,8 @@ public class Main {
 	     weekThriteen.setWeeklyTotalily(weekThriteen.convertHourlyTotalIntoWeeklyTotal(weekThriteen.getSaturdayTotal(),weekThriteen.getSundayTotal(),weekThriteen.getMondayTotal(),weekThriteen.getFridayTotal()));
 	     weekForteenth.setWeeklyTotalily(weekForteenth.convertHourlyTotalIntoWeeklyTotal(weekForteenth.getSaturdayTotal(),weekForteenth.getSundayTotal(),weekForteenth.getMondayTotal(),weekForteenth.getTuesdayTotal(),weekForteenth.getWednesdayTotal(),weekForteenth.getThursdayTotal(),weekForteenth.getFridayTotal()));
 	     weekFifteenth.setWeeklyTotalily(weekFifteenth.convertHourlyTotalIntoWeeklyTotal(weekFifteenth.getSaturdayTotal(),weekFifteenth.getSundayTotal(),weekFifteenth.getMondayTotal(),weekFifteenth.getFridayTotal()));
-	     /*weekSixteenth.setWeeklyTotalily(weekSixteenth.convertHourlyTotalIntoWeeklyTotal(weekSixteenth.getSaturdayTotal(),weekSixteenth.getSundayTotal(),weekSixteenth.getMondayTotal(),weekSixteenth.getFridayTotal()));
-	     /*weekSeventeenth.setWeeklyTotalily(weekSeventeenth.convertHourlyTotalIntoWeeklyTotal(weekSeventeenth.getSaturdayTotal(),weekSeventeenth.getSundayTotal(),weekSeventeenth.getMondayTotal(),weekSeventeenth.getTuesdayTotal(),weekSeventeenth.getFridayTotal()));
+	     weekSixteenth.setWeeklyTotalily(weekSixteenth.convertHourlyTotalIntoWeeklyTotal(weekSixteenth.getSaturdayTotal(),weekSixteenth.getSundayTotal(),weekSixteenth.getMondayTotal(),weekSixteenth.getFridayTotal()));
+	     weekSeventeenth.setWeeklyTotalily(weekSeventeenth.convertHourlyTotalIntoWeeklyTotal(weekSeventeenth.getSaturdayTotal(),weekSeventeenth.getSundayTotal(),weekSeventeenth.getMondayTotal(),weekSeventeenth.getTuesdayTotal(),weekSeventeenth.getFridayTotal()));
 	     /*weekEightteenth.setWeeklyTotalily(weekEightteenth.convertHourlyTotalIntoWeeklyTotal(weekEightteenth.getSaturdayTotal(),weekEightteenth.getSundayTotal(),weekEightteenth.getMondayTotal(),weekEightteenth.getTuesdayTotal(),weekEightteenth.getFridayTotal()));
 	     weekNinteenth.setWeeklyTotalily(weekNinteenth.convertHourlyTotalIntoWeeklyTotal(weekNinteenth.getSaturdayTotal(),weekNinteenth.getSundayTotal(),weekNinteenth.getMondayTotal(),weekNinteenth.getTuesdayTotal(),weekNinteenth.getFridayTotal()));
 	     weekTwentyth.setWeeklyTotalily(weekTwentyth.convertHourlyTotalIntoWeeklyTotal(weekTwentyth.getSaturdayTotal(),weekTwentyth.getSundayTotal(),weekTwentyth.getMondayTotal(),weekTwentyth.getTuesdayTotal(),weekTwentyth.getFridayTotal()));
@@ -653,9 +657,9 @@ public class Main {
 	     weekTwentyThird.setWeeklyTotalily(weekTwentyThird.convertHourlyTotalIntoWeeklyTotal(weekTwentyThird.getSaturdayTotal(),weekTwentyThird.getSundayTotal(),weekTwentyThird.getMondayTotal(),weekTwentyThird.getTuesdayTotal(),weekTwentyThird.getFridayTotal()));
 	     weekTwentyFourth.setWeeklyTotalily(weekTwentyFourth.convertHourlyTotalIntoWeeklyTotal(weekTwentyFourth.getSaturdayTotal(),weekTwentyFourth.getSundayTotal(),weekTwentyFourth.getMondayTotal(),weekTwentyFourth.getFridayTotal()));
 	     weekTwentyFifith.setWeeklyTotalily(weekTwentyFifith.convertHourlyTotalIntoWeeklyTotal(weekTwentyFifith.getSaturdayTotal(),weekTwentyFifith.getSundayTotal(),weekTwentyFifith.getFridayTotal()));
+	     */
 	     weekTwentySixth.setWeeklyTotalily(0);
 	     weekTwentySeventh.setWeeklyTotalily(weekTwentySeventh.convertHourlyTotalIntoWeeklyTotal(weekTwentySeventh.getSaturdayTotal()));
-	     */
 	     weekTwentyEighth.setWeeklyTotalily(weekTwentyEighth.convertHourlyTotalIntoWeeklyTotal(weekTwentyEighth.getSaturdayTotal(),weekTwentyEighth.getSundayTotal(),weekTwentyEighth.getMondayTotal(),weekTwentyEighth.getFridayTotal()));
 	     weekTwentyNinth.setWeeklyTotalily(0);
 	     weekThirtieth.setWeeklyTotalily(weekThirtieth.getSaturdayTotal());
@@ -678,8 +682,8 @@ public class Main {
 	     weekThriteen.setSummedHours(weekThriteen.WeeklyTotal(weekTwelve.getSummedHours(),weekThriteen.getWeeklyTotalily()));
 	     weekForteenth.setSummedHours(weekSeven.WeeklyTotal(weekThriteen.getSummedHours(),weekForteenth.getWeeklyTotalily()));
 	     weekFifteenth.setSummedHours(weekFifteenth.WeeklyTotal(weekForteenth.getSummedHours(),weekFifteenth.getWeeklyTotalily()));
-	     /*weekSixteenth.setSummedHours(weekSixteenth.WeeklyTotal(weekFifteenth.getSummedHours(),weekSixteenth.getWeeklyTotalily()));
-	     /*weekSeventeenth.setSummedHours(weekSeventeenth.WeeklyTotal(weekSixteenth.getSummedHours(),weekSeventeenth.getWeeklyTotalily()));
+	     weekSixteenth.setSummedHours(weekSixteenth.WeeklyTotal(weekFifteenth.getSummedHours(),weekSixteenth.getWeeklyTotalily()));
+	     weekSeventeenth.setSummedHours(weekSeventeenth.WeeklyTotal(weekSixteenth.getSummedHours(),weekSeventeenth.getWeeklyTotalily()));
 	     /*weekEightteenth.setSummedHours(weekEightteenth.WeeklyTotal(weekEightteenth.getWeeklyTotalily(),weekSeventeenth.getSummedHours()));
 	     weekNinteenth.setSummedHours(weekNinteenth.WeeklyTotal(weekNinteenth.getWeeklyTotalily(),weekEightteenth.getSummedHours()));
 	     weekTwentyth.setSummedHours(weekTwentyth.WeeklyTotal(weekTwentyth.getWeeklyTotalily(),weekNinteenth.getSummedHours()));
@@ -688,10 +692,10 @@ public class Main {
 	     weekTwentyThird.setSummedHours(weekTwentyThird.WeeklyTotal(weekTwentyThird.getWeeklyTotalily(),weekTwentySecond.getSummedHours()));
 	     weekTwentyFourth.setSummedHours(weekTwentyFourth.WeeklyTotal(weekTwentyFourth.getWeeklyTotalily(),weekTwentyThird.getSummedHours()));
 	     weekTwentyFifith.setSummedHours(weekTwentyFifith.WeeklyTotal(weekTwentyFifith.getWeeklyTotalily(),weekTwentyFourth.getSummedHours()));
-	     weekTwentySixth.setSummedHours(weekTwentySixth.WeeklyTotal(weekTwentyFifith.getSummedHours(),weekTwentySixth.getWeeklyTotalily()));
-	     weekTwentySeventh.setSummedHours(weekTwentySeventh.WeeklyTotal(weekTwentySixth.getSummedHours(),weekTwentySeventh.getWeeklyTotalily()));
 	     */
-	     weekTwentyEighth.setSummedHours(weekTwentyEighth.WeeklyTotal(weekTwentyEighth.getWeeklyTotalily(),weekFifteenth.getSummedHours()));
+	     weekTwentySixth.setSummedHours(weekTwentySixth.WeeklyTotal(weekSeventeenth.getSummedHours(),weekTwentySixth.getWeeklyTotalily()));
+	     weekTwentySeventh.setSummedHours(weekTwentySeventh.WeeklyTotal(weekTwentySixth.getSummedHours(),weekTwentySeventh.getWeeklyTotalily()));
+	     weekTwentyEighth.setSummedHours(weekTwentyEighth.WeeklyTotal(weekTwentyEighth.getWeeklyTotalily(),weekTwentySeventh.getSummedHours()));
 	     weekTwentyNinth.setSummedHours(weekTwentyNinth.WeeklyTotal(weekTwentyNinth.getWeeklyTotalily(),weekTwentyEighth.getSummedHours()));
 	     weekThirtieth.setSummedHours(weekThirtieth.WeeklyTotal(weekThirtieth.getWeeklyTotalily(),weekTwentyNinth.getSummedHours()));
 	     weekThrityFirst.setSummedHours(weekThrityFirst.convertHourlyTotalIntoWeeklyTotal(weekThrityFirst.getWeeklyTotalily(),weekThirtieth.getSummedHours()));
@@ -713,8 +717,8 @@ public class Main {
 	     weekThriteen.setSummedHoursMinusTotalHours(weekThriteen.WeeklyTotalMinusTotalAmountOfHours(weekThriteen.getSummedHours()));
 	     weekForteenth.setSummedHoursMinusTotalHours(weekForteenth.WeeklyTotalMinusTotalAmountOfHours(weekForteenth.getSummedHours()));
 	     weekFifteenth.setSummedHoursMinusTotalHours(weekFifteenth.WeeklyTotalMinusTotalAmountOfHours(weekFifteenth.getSummedHours()));
-	     /*weekSixteenth.setSummedHoursMinusTotalHours(weekSixteenth.WeeklyTotalMinusTotalAmountOfHours(weekSixteenth.getSummedHours()));
-	     /*weekSeventeenth.setSummedHoursMinusTotalHours(weekSeventeenth.WeeklyTotalMinusTotalAmountOfHours(weekSeventeenth.getSummedHours()));
+	     weekSixteenth.setSummedHoursMinusTotalHours(weekSixteenth.WeeklyTotalMinusTotalAmountOfHours(weekSixteenth.getSummedHours()));
+	     weekSeventeenth.setSummedHoursMinusTotalHours(weekSeventeenth.WeeklyTotalMinusTotalAmountOfHours(weekSeventeenth.getSummedHours()));
 	     /*weekEightteenth.setSummedHoursMinusTotalHours(weekEightteenth.WeeklyTotalMinusTotalAmountOfHours(weekEightteenth.getSummedHours()));
 	     /*weekNinteenth.setSummedHoursMinusTotalHours(weekNinteenth.WeeklyTotalMinusTotalAmountOfHours(weekNinteenth.getSummedHours()));
 	     weekTwentyth.setSummedHoursMinusTotalHours(weekTwentyth.WeeklyTotalMinusTotalAmountOfHours(weekTwentyth.getSummedHours()));
@@ -723,9 +727,9 @@ public class Main {
 	     weekTwentyThird.setSummedHoursMinusTotalHours(weekTwentyThird.WeeklyTotalMinusTotalAmountOfHours(weekTwentyThird.getSummedHours()));
 	     weekTwentyFourth.setSummedHoursMinusTotalHours(weekTwentyFourth.WeeklyTotalMinusTotalAmountOfHours(weekTwentyFourth.getSummedHours()));
 	     weekTwentyFifith.setSummedHoursMinusTotalHours(weekTwentyFifith.WeeklyTotalMinusTotalAmountOfHours(weekTwentyFifith.getSummedHours()));
+	     */
 	     weekTwentySixth.setSummedHoursMinusTotalHours(weekTwentySixth.WeeklyTotalMinusTotalAmountOfHours(weekTwentySixth.getSummedHours()));
 	     weekTwentySeventh.setSummedHoursMinusTotalHours(weekTwentySeventh.WeeklyTotalMinusTotalAmountOfHours(weekTwentySeventh.getSummedHours()));
-	      */
 	     weekTwentyEighth.setSummedHoursMinusTotalHours(weekTwentyEighth.WeeklyTotalMinusTotalAmountOfHours(weekTwentyEighth.getSummedHours()));
 	     weekTwentyNinth.setSummedHoursMinusTotalHours(weekTwentyNinth.WeeklyTotalMinusTotalAmountOfHours(weekTwentyNinth.getSummedHours()));
 	     weekThirtieth.setSummedHoursMinusTotalHours(weekThirtieth.WeeklyTotalMinusTotalAmountOfHours(weekThirtieth.getSummedHours()));
@@ -741,7 +745,7 @@ public class Main {
 	     weekTen.setPaychecks(weekNine.paycheck(weekTen.getWeeklyTotalily(), weekNine.getWeeklyTotalily()));
 	     weekTwelve.setPaychecks(weekEleven.paycheck(weekTwelve.getWeeklyTotalily(), weekEleven.getWeeklyTotalily()));
 	     weekForteenth.setPaychecks(weekThriteen.paycheck(weekThriteen.getWeeklyTotalily(), weekForteenth.getWeeklyTotalily()));
-	     /*weekSixteenth.setPaychecks(weekFifteenth.paycheck(weekFifteenth.getWeeklyTotalily(),weekSixteenth.getWeeklyTotalily() ));
+	     weekSixteenth.setPaychecks(weekFifteenth.paycheck(weekFifteenth.getWeeklyTotalily(),weekSixteenth.getWeeklyTotalily() ));
 	     /*weekSeventeenth.setPaychecks(weekSeventeenth.paycheck(weekSeventeenth.getWeeklyTotalily(), weekSixteenth.getWeeklyTotalily()));
 	     /*weekNinteenth.setPaychecks(weekNinteenth.paycheck(weekNinteenth.getWeeklyTotalily(), weekEightteenth.getWeeklyTotalily()));
 	     weekTwentyFrist.setPaychecks(weekTwentyFrist.paycheck(weekTwentyFrist.getWeeklyTotalily(), weekTwentyth.getWeeklyTotalily()));
@@ -749,7 +753,7 @@ public class Main {
 	     weekTwentyFifith.setPaychecks(weekTwentyFifith.paycheck(weekTwentyFourth.getWeeklyTotalily(), weekTwentyFifith.getWeeklyTotalily()));
 	     weekTwentySixth.setPaychecks(weekTwentySeventh.paycheck(weekTwentySeventh.getWeeklyTotalily(), weekTwentySixth.getWeeklyTotalily()));
 	     */
-	     weekTwentyEighth.setPaychecks(weekTwentyEighth.paycheck(weekTwentyEighth.getWeeklyTotalily(),weekTwentyNinth.getWeeklyTotalily()));
+	     weekTwentyEighth.setPaychecks(weekTwentyEighth.paycheck(weekTwentyEighth.getWeeklyTotalily(),weekTwentySeventh.getWeeklyTotalily()));
 	     weekThirtieth.setPaychecks(weekThrityFirst.paycheck(weekThirtieth.getWeeklyTotalily(),weekTwentyNinth.getWeeklyTotalily() ));
 	     weekThritySecond.setPaychecks(weekThritySecond.paycheck(weekThritySecond.getWeeklyTotalily(),weekThrityFirst.getWeeklyTotalily()));
 	     
@@ -769,26 +773,28 @@ public class Main {
 	     System.out.printf("    13      | Mar 25 - Apr  1  | %.2f  |   %.2f    |    %.2f   | %n ",weekThriteen.getWeeklyTotalily(),weekThriteen.getSummedHours(),weekThriteen.getSummedHoursMinusTotalHours());
 	     System.out.printf("   14      | Apr  2 - Apr  8  | %.2f  |   %.2f    |    %.2f   | %.2f %n",weekForteenth.getWeeklyTotalily(),weekForteenth.getSummedHours(),weekForteenth.getSummedHoursMinusTotalHours(),weekForteenth.getPaychecks());
 	     System.out.printf("    15      | Apr 16- Apr  22  | %.2f  |   %.2f    |    %.2f   |  %n",weekFifteenth.getWeeklyTotalily(),weekFifteenth.getSummedHours(),weekFifteenth.getSummedHoursMinusTotalHours());
-	     /*System.out.printf("    16      | Apr 23 - Apr 29  | %.2f  |  %.2f     |    %.2f   | %n", weekSixteenth.getWeeklyTotalily(),weekSixteenth.getSummedHours(),weekSixteenth.getSummedHoursMinusTotalHours(),weekSixteenth.getPaychecks());
-	     System.out.printf("    17      | Apr 30 - May  6  | %.2f  |  %.2f     |    %.2f   | %.2f %n",weekSeventeenth.getWeeklyTotalily(),weekSeventeenth.getSummedHours(),weekSeventeenth.getSummedHoursMinusTotalHours(),weekSeventeenth.getPaychecks());
-	     System.out.printf("    18      | May  7 - May 13  | %.2f  |  %.2f     |    %.2f    |  %n",weekEightteenth.getWeeklyTotalily(), weekEightteenth.getSummedHours(),weekEightteenth.getSummedHoursMinusTotalHours());
-	     System.out.printf("    19      | May 14 - May 20  | %.2f  |  %.2f     |    %.2f    | %.2f %n",weekNinteenth.getWeeklyTotalily(),weekNinteenth.getSummedHours(),weekNinteenth.getSummedHoursMinusTotalHours(),weekNinteenth.getPaychecks());
+	     System.out.printf("    16      | Apr 23 - Apr 29  | %.2f  |   %.2f    |    %.2f   | %.2f %n", weekSixteenth.getWeeklyTotalily(),weekSixteenth.getSummedHours(),weekSixteenth.getSummedHoursMinusTotalHours(),weekSixteenth.getPaychecks());
+	     System.out.printf("    17      | Apr 30 - May  6  | %.2f  |   %.2f    |    %.2f   |  %n",weekSeventeenth.getWeeklyTotalily(),weekSeventeenth.getSummedHours(),weekSeventeenth.getSummedHoursMinusTotalHours());
+	     /*System.out.printf("    18      | May  7 - May 13  | %.2f  |  %.2f     |    %.2f    |  %n",weekEightteenth.getWeeklyTotalily(), weekEightteenth.getSummedHours(),weekEightteenth.getSummedHoursMinusTotalHours());
+	     /*System.out.printf("    19      | May 14 - May 20  | %.2f  |  %.2f     |    %.2f    | %.2f %n",weekNinteenth.getWeeklyTotalily(),weekNinteenth.getSummedHours(),weekNinteenth.getSummedHoursMinusTotalHours(),weekNinteenth.getPaychecks());
 	     System.out.printf("    20      | May 21 - May 27  | %.2f  |  %.2f     |    %.2f    | %n",weekTwentyth.getWeeklyTotalily(),weekTwentyth.getSummedHours(),weekTwentyth.getSummedHoursMinusTotalHours());
 	     System.out.printf("    21      | May 28 - Jun  5  | %.2f   |  %.2f     |    %.2f    | %.2f %n",weekTwentyFrist.getWeeklyTotalily(),weekTwentyFrist.getSummedHours(),weekTwentyFrist.getSummedHoursMinusTotalHours(),weekTwentyFrist.getPaychecks());
 	     System.out.printf("    24      | Jun  6 - Jun 10  | %.2f  |  %.2f     |    %.2f    | %n ", weekTwentySecond.getWeeklyTotalily(), weekTwentySecond.getSummedHours(),weekTwentySecond.getSummedHoursMinusTotalHours());
 	     System.out.printf("   23      | Jun 11 - Jun 17  | %.2f  |  %.2f     |    %.2f    | %.2f %n",weekTwentyThird.getWeeklyTotalily(),weekTwentyThird.getSummedHours(),weekTwentyThird.getSummedHoursMinusTotalHours(),weekTwentyThird.getPaychecks());
 	     System.out.printf("    24      | Jun 18 - Jun 24  | %.2f  |  %.2f     |    %.2f    |  %n", weekTwentyFourth.getWeeklyTotalily(),weekTwentyFourth.getSummedHours(),weekTwentyFourth.getSummedHoursMinusTotalHours() );
 	     System.out.printf("    25      | Jun 25 - Jul  1  | %.2f  |  %.2f     |    %.2f    | %.2f %n", weekTwentyFifith.getWeeklyTotalily(),weekTwentyFifith.getSummedHours(),weekTwentyFifith.getSummedHoursMinusTotalHours(),weekTwentyFifith.getPaychecks());
-	     System.out.printf("    26      | Jul  2 - Jul  8  | %.2f   |  %.2f     |    %.2f    | %n", weekTwentySixth.getWeeklyTotalily(),weekTwentySixth.getSummedHours(),weekTwentySixth.getSummedHoursMinusTotalHours());
-	     System.out.printf("    27      | Jul 9  - Jul 15  | %.2f   |  %.2f     |    %.2f    | %.2f %n",weekTwentySeventh.getWeeklyTotalily(),weekTwentySeventh.getSummedHours(),weekTwentySeventh.getSummedHoursMinusTotalHours(),weekTwentySeventh.getPaychecks() );
 	     */
-	     System.out.printf("    28      | Jul 16 - Jul 22  | %.2f  |   %.2f    |    %.2f   | %.2f  %n", weekTwentyEighth.getWeeklyTotalily(),weekTwentyEighth.getSummedHours(),weekTwentyEighth.getSummedHoursMinusTotalHours(),weekTwentyNinth.getPaychecks());
-	     System.out.printf("    29      | Jul 23 - Jul 29  | %.2f   |   %.2f    |    %.2f   |  %n",weekTwentyNinth.getWeeklyTotalily(),weekTwentyNinth.getSummedHours(),weekTwentyNinth.getSummedHoursMinusTotalHours());
-	     System.out.printf("    30      | Jul 31 - Aug  5  | %.2f   |   %.2f    |    %.2f   | %.2f %n",weekThirtieth.getWeeklyTotalily(),weekThirtieth.getSummedHours(),weekThirtieth.getSummedHoursMinusTotalHours(),weekThirtieth.getPaychecks());
+	     System.out.printf("    26      | Jul  2 - Jul  8  | %.2f   |   %.2f    |    %.2f   | %n", weekTwentySixth.getWeeklyTotalily(),weekTwentySixth.getSummedHours(),weekTwentySixth.getSummedHoursMinusTotalHours());
 	     
-	     System.out.printf("    31      | Aug  6 - Aug 12  | %.2f  |   %.2f    |    %.2f   | %n", weekThrityFirst.getWeeklyTotalily(),weekThrityFirst.getSummedHours(),weekThrityFirst.getSummedHoursMinusTotalHours());
-	     System.out.printf("    32      | Aug 13 - Aug 19  | %.2f  |   %.2f    |    %.2f   | %.2f %n",weekThritySecond.getWeeklyTotalily() , weekThritySecond.getSummedHours() , weekThritySecond.getSummedHoursMinusTotalHours() , weekThritySecond.getPaychecks());
-	     System.out.printf("    33      | Aug 20 - Aug 24  | %.2f  |   %.2f    |    %.2f   | %n", weekThirtyThird.getWeeklyTotalily(),weekThritySecond.getSummedHours(),weekThritySecond.getSummedHoursMinusTotalHours());
+	     System.out.printf("    27      | Jul 9  - Jul 15  | %.2f   |   %.2f    |    %.2f   | %n",weekTwentySeventh.getWeeklyTotalily(),weekTwentySeventh.getSummedHours(),weekTwentySeventh.getSummedHoursMinusTotalHours() );
+	     
+	     System.out.printf("    28      | Jul 16 - Jul 22  | %.2f  |   %.2f    |    %.2f    | %.2f  %n", weekTwentyEighth.getWeeklyTotalily(),weekTwentyEighth.getSummedHours(),weekTwentyEighth.getSummedHoursMinusTotalHours(),weekTwentyEighth.getPaychecks());
+	     System.out.printf("    29      | Jul 23 - Jul 29  | %.2f   |   %.2f    |    %.2f    |  %n",weekTwentyNinth.getWeeklyTotalily(),weekTwentyNinth.getSummedHours(),weekTwentyNinth.getSummedHoursMinusTotalHours());
+	     System.out.printf("    30      | Jul 31 - Aug  5  | %.2f   |   %.2f    |    %.2f    | %.2f %n",weekThirtieth.getWeeklyTotalily(),weekThirtieth.getSummedHours(),weekThirtieth.getSummedHoursMinusTotalHours(),weekThirtieth.getPaychecks());
+	     
+	     System.out.printf("    31      | Aug  6 - Aug 12  | %.2f  |   %.2f    |    %.2f    | %n", weekThrityFirst.getWeeklyTotalily(),weekThrityFirst.getSummedHours(),weekThrityFirst.getSummedHoursMinusTotalHours());
+	     System.out.printf("    32      | Aug 13 - Aug 19  | %.2f  |   %.2f    |    %.2f    | %.2f %n",weekThritySecond.getWeeklyTotalily() , weekThritySecond.getSummedHours() , weekThritySecond.getSummedHoursMinusTotalHours() , weekThritySecond.getPaychecks());
+	     System.out.printf("    33      | Aug 20 - Aug 24  | %.2f  |   %.2f    |    %.2f    | %n", weekThirtyThird.getWeeklyTotalily(),weekThritySecond.getSummedHours(),weekThritySecond.getSummedHoursMinusTotalHours());
 	}
 
 }

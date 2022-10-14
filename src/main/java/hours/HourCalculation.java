@@ -2,10 +2,12 @@ package hours;
 
 import java.util.Hashtable;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import exceptions.DaysNotFoundExecption;
 
 public class HourCalculation implements Hours {
+	private static Logger log = Logger.getLogger("Main.class");
 	private double timeIn0Saturday,timeOut0Saturday,timein1Saturday,timeOut1Saturday,timeIn0Sunday,timeOut0Sunday,timeIn1Sunday,timeOut1Sunday,timeIn0Monday,timeOut0Monday,timeIn1Monday,timeOut1Monday,timeIn0Tuesady,timeOut0Tuesday,timeIn1Tuesday,timeOut1Tuesday,timeOut0Wednesday,timeIn0Wednesday,timeOut1Wednesday,timeIn1Wednesday,timeOut0Thursday,timeIn0Thursday,timeOut1Thursday,timeIn1Thursday, timeOut0Friday,timeIn0Friday,timeIn1Friday,timeOut1Friday=0.0;
 	public double getDayIn0() {
 		return dayIn0;
@@ -281,10 +283,12 @@ public class HourCalculation implements Hours {
 		case "Sunday":
 			this.setDayIn0(ar[0]);
 			this.setDayOut0(ar[1]);
+			log.info("getDayOut0="+getDayOut0());
 			this.setDayIn1(ar[2]);
 			this.setDayOut1(ar[3]);
 			this.setTimeIn0Sunday(getDayIn0());
 			this.setTimeOut0Sunday(getDayOut0());
+			log.info("getTimeOut0Sunday=" +getTimeOut0Sunday());
 			this.setTimeIn1Sunday(getDayIn1());
 			this.setTimeOut0Sunday(getDayOut1());
 			break;
@@ -348,7 +352,7 @@ public class HourCalculation implements Hours {
 		double [] ar =  new double [4];
 		if (dates.containsKey(genDate + " In")) {
 			ar[0] = dates.get(genDate + " In");
-			ar[1] =dates.get(genDate + " Out");
+			ar[1] = dates.get(genDate + " Out");
 		}
 		return ar;
 	}

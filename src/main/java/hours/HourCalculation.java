@@ -9,6 +9,7 @@ import exceptions.DaysNotFoundExecption;
 public class HourCalculation implements Hours {
 	private static Logger log = Logger.getLogger("Main.class");
 	private double timeIn0Saturday,timeOut0Saturday,timein1Saturday,timeOut1Saturday,timeIn0Sunday,timeOut0Sunday,timeIn1Sunday,timeOut1Sunday,timeIn0Monday,timeOut0Monday,timeIn1Monday,timeOut1Monday,timeIn0Tuesady,timeOut0Tuesday,timeIn1Tuesday,timeOut1Tuesday,timeOut0Wednesday,timeIn0Wednesday,timeOut1Wednesday,timeIn1Wednesday,timeOut0Thursday,timeIn0Thursday,timeOut1Thursday,timeIn1Thursday, timeOut0Friday,timeIn0Friday,timeIn1Friday,timeOut1Friday=0.0;
+	private double dayIn0,dayOut0,dayIn1,dayOut1;
 	public double getDayIn0() {
 		return dayIn0;
 	}
@@ -40,7 +41,6 @@ public class HourCalculation implements Hours {
 	public void setDayOut1(double dayOut1) {
 		this.dayOut1 = dayOut1;
 	}
-	private double dayIn0,dayOut0,dayIn1,dayOut1;
 	
 	public double getTimeOut0Wednesday() {
 		return timeOut0Wednesday;
@@ -258,14 +258,16 @@ public class HourCalculation implements Hours {
 		double [] ar= {0.0,0.0,0.0,0.0} ;
 		if (dates.containsKey(genDate + " In")) {
 			ar[0] = dates.get(genDate + " In");
-			ar[1] =dates.get(genDate + " Out");
+			ar[1] = dates.get(genDate + " Out");
 		}
 		if(dates.containsKey(genDateOne + " In")) {
 			ar[2] = dates.get(genDateOne + " In");
-			ar[3] = dates.get(genDateOne+ " Out" );
+			ar[3] = dates.get(genDateOne + " Out" );
 		}
 		return ar;
 	}
+	// the objective of this is to read in based upon the zero split in which is supposed to be a day / option then to put the values into buckets and set those ones into the proper
+	//bucket 
 	@Override
 	public void setHourlyValuesForDates(String genDate,double[] ar) throws DaysNotFoundExecption {
 		String[] genDateValue= genDate.split(" ");
@@ -283,14 +285,12 @@ public class HourCalculation implements Hours {
 		case "Sunday":
 			this.setDayIn0(ar[0]);
 			this.setDayOut0(ar[1]);
-			log.info("getDayOut0="+getDayOut0());
 			this.setDayIn1(ar[2]);
 			this.setDayOut1(ar[3]);
 			this.setTimeIn0Sunday(getDayIn0());
 			this.setTimeOut0Sunday(getDayOut0());
-			log.info("getTimeOut0Sunday=" +getTimeOut0Sunday());
 			this.setTimeIn1Sunday(getDayIn1());
-			this.setTimeOut0Sunday(getDayOut1());
+			this.setTimeOut1Sunday(getDayOut1());
 			break;
 		case "Monday":
 			this.setDayIn0(ar[0]);

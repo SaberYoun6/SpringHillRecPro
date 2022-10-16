@@ -33,7 +33,7 @@ public class Main {
 		HourCalculation daysOfWeekThritythird = new HourCalculation();
 		HourCalculation daysOfWeekThirtySixth = new HourCalculation();
 		HourCalculation daysOfWeekThirtySeventh = new HourCalculation();
-		HourCalculation daysOfWeekTHrityEighth = new HourCalculation();
+		HourCalculation daysOfWeekThrityEighth = new HourCalculation();
 		HourCalculation daysOfWeekThirtyNinth = new HourCalculation();
 		HourCalculation daysOfWeekfortieth = new HourCalculation();
 		HourCalculation daysOfWeekFortyFirst = new HourCalculation();
@@ -256,11 +256,11 @@ public class Main {
 		daysOfWeekThirtySeventh.setHourlyValuesForDates("thursday September 22", daysOfWeekThirtySeventh.arrayOfHoursValues("thursday September 22", hts));
 		daysOfWeekThirtySeventh.setHourlyValuesForDates("Friday September 23", daysOfWeekThirtySeventh.arrayOfHoursValues("Friday September 23", hts));
 		
-		daysOfWeekTHrityEighth.setHourlyValuesForDates("Saturday September 24", daysOfWeekTHrityEighth.arrayOfHoursValues("Saturday September 24", hts));
-		daysOfWeekTHrityEighth.setHourlyValuesForDates("Sunday September 25", daysOfWeekTHrityEighth.arrayOfHoursValues("Sunday September 25", hts));
-		daysOfWeekTHrityEighth.setHourlyValuesForDates("Tuesday September 27", daysOfWeekTHrityEighth.arrayOfHoursValues("Tuesday September 27", hts));
-		daysOfWeekTHrityEighth.setHourlyValuesForDates("thursday September 29", daysOfWeekTHrityEighth.arrayOfHoursValues("thursday September 29", hts));
-		daysOfWeekTHrityEighth.setHourlyValuesForDates("Friday September 30", daysOfWeekTHrityEighth.arrayOfHoursValues("Friday September 30", hts));
+		daysOfWeekThrityEighth.setHourlyValuesForDates("Saturday September 24", daysOfWeekThrityEighth.arrayOfHoursValues("Saturday September 24", hts));
+		daysOfWeekThrityEighth.setHourlyValuesForDates("Sunday September 25", daysOfWeekThrityEighth.arrayOfHoursValues("Sunday September 25", hts));
+		daysOfWeekThrityEighth.setHourlyValuesForDates("Tuesday September 27", daysOfWeekThrityEighth.arrayOfHoursValues("Tuesday September 27", hts));
+		daysOfWeekThrityEighth.setHourlyValuesForDates("thursday September 29", daysOfWeekThrityEighth.arrayOfHoursValues("thursday September 29", hts));
+		daysOfWeekThrityEighth.setHourlyValuesForDates("Friday September 30", daysOfWeekThrityEighth.arrayOfHoursValues("Friday September 30", hts));
 		
 		daysOfWeekThirtyNinth.setHourlyValuesForDates("Saturday October 1", daysOfWeekThirtyNinth.arrayOfHoursValues("Saturday October 1", hts));
 		daysOfWeekThirtyNinth.setHourlyValuesForDates("Tuesday October 4", daysOfWeekThirtyNinth.arrayOfHoursValues("Tuesday October 4", hts));
@@ -268,8 +268,31 @@ public class Main {
 		daysOfWeekThirtyNinth.setHourlyValuesForDates("Friday October 7", daysOfWeekThirtyNinth.arrayOfHoursValues("Friday October 7", hts));
 		
 		
+		daysOfWeekfortieth.setHourlyValuesForDates("Saturday October 8", daysOfWeekfortieth.arrayOfHoursValues("Saturday October 8", hts));
+		daysOfWeekfortieth.setHourlyValuesForDates("Sunday October 9", daysOfWeekfortieth.arrayOfHoursValues("Sunday October 9", hts));
+		daysOfWeekfortieth.setHourlyValuesForDates("Tuesday October 11",daysOfWeekfortieth.arrayOfHoursValues("Tuesday October 11", hts) );
+		daysOfWeekfortieth.setHourlyValuesForDates("Wednesday October 12", daysOfWeekfortieth.arrayOfHoursValues("Wednesday October 12", hts));
+		daysOfWeekfortieth.setHourlyValuesForDates("thursday October 13", daysOfWeekfortieth.arrayOfHoursValues("thursday October 13", hts));
+		daysOfWeekfortieth.setHourlyValuesForDates("Friday October 14", daysOfWeekfortieth.arrayOfHoursValues("Friday October 14", hts));
+		
+		
+		
 		DailyCalculation datesOFweekThritySeventh = new DailyCalculation();
 		DailyCalculation dateOfWeekThirtyEighth = new DailyCalculation();
+		DailyCalculation datesOfWeekThirtyNinth = new DailyCalculation();
+		DailyCalculation datesOfWeekFortieth = new DailyCalculation();
+		//datesOfWeekThirtyNinth daysOfWeekThirtyNinth
+		datesOfWeekThirtyNinth.setSaturdayTotal(datesOfWeekThirtyNinth.hourlyConvertedIntoDaily(daysOfWeekThirtyNinth.getTimeIn0Saturday(), daysOfWeekThirtyNinth.getTimeOut0Saturday()));
+		datesOfWeekThirtyNinth.setTuesdayTotal(datesOfWeekThirtyNinth.hourlyConvertedIntoDaily(daysOfWeekThirtyNinth.getTimeIn0Tuesady(), daysOfWeekThirtyNinth.getTimeOut0Tuesday()));
+		datesOfWeekThirtyNinth.setThursdayTotal(datesOfWeekThirtyNinth.hourlyConvertedIntoDaily(daysOfWeekThirtyNinth.getTimeIn0Thursday(), daysOfWeekThirtyNinth.getTimeOut0Thursday()));
+		datesOfWeekThirtyNinth.setFridayTotal(datesOfWeekThirtyNinth.hourlyConvertedIntoDaily(daysOfWeekThirtyNinth.getTimeIn0Friday(), daysOfWeekThirtyNinth.getTimeOut0Friday()));
+		//datesOfWeekFortieth daysOfWeekfortieth
+		datesOfWeekFortieth.setSaturdayTotal(datesOfWeekFortieth.hourlyConvertedIntoDaily(daysOfWeekfortieth.getTimeIn0Saturday(), daysOfWeekfortieth.getTimeOut0Saturday()));
+		datesOfWeekFortieth.setSundayTotal(datesOfWeekFortieth.hourlyConvertedIntoDaily(daysOfWeekfortieth.getTimeIn0Sunday(), daysOfWeekfortieth.getTimeOut0Sunday()));
+		datesOfWeekFortieth.setTuesdayTotal(datesOfWeekFortieth.hourlyConvertedIntoDaily(daysOfWeekfortieth.getTimeIn0Tuesady(), daysOfWeekfortieth.getTimeOut0Tuesday()));
+		datesOfWeekFortieth.setWednesdayTotal(datesOfWeekFortieth.hourlyConvertedIntoDaily(daysOfWeekfortieth.getTimeIn0Wednesday(), daysOfWeekfortieth.getTimeOut0Wednesday()));
+		datesOfWeekFortieth.setThursdayTotal(datesOfWeekFortieth.hourlyConvertedIntoDaily(daysOfWeekfortieth.getTimeIn0Thursday(), daysOfWeekfortieth.getTimeOut0Thursday()));
+		datesOfWeekFortieth.setFridayTotal(datesOfWeekFortieth.hourlyConvertedIntoDaily(daysOfWeekfortieth.getTimeIn0Friday(), daysOfWeekfortieth.getTimeOut0Friday()));
 		//datesOFweekThritySeventh daysOfWeekThirtySeventh 
 		datesOFweekThritySeventh.setSaturdayTotal(datesOFweekThritySeventh.hourlyConvertedIntoDaily(daysOfWeekThirtySeventh.getTimeIn0Saturday(), daysOfWeekThirtySeventh.getTimeOut0Saturday()));
 		datesOFweekThritySeventh.setSundayTotal(datesOFweekThritySeventh.hourlyConvertedIntoDaily(daysOfWeekThirtySeventh.getTimeIn0Sunday(), daysOfWeekThirtySeventh.getTimeOut0Sunday()));
@@ -278,14 +301,16 @@ public class Main {
 		datesOFweekThritySeventh.setThursdayTotal(datesOFweekThritySeventh.hourlyConvertedIntoDaily(daysOfWeekThirtySeventh.getTimeIn0Thursday(), daysOfWeekThirtySeventh.getTimeOut0Thursday()));
 		datesOFweekThritySeventh.setFridayTotal(datesOFweekThritySeventh.hourlyConvertedIntoDaily(daysOfWeekThirtySeventh.getTimeIn0Friday(),daysOfWeekThirtySeventh.getTimeOut0Friday()));
 		//dateOfWeekThirtyEighth daysOfWeekTHrityEighth
-		dateOfWeekThirtyEighth.setSaturdayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekTHrityEighth.getTimeIn0Saturday(), daysOfWeekTHrityEighth.getTimeOut0Saturday()));
-		dateOfWeekThirtyEighth.setSundayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekTHrityEighth.getTimeIn0Sunday(), daysOfWeekTHrityEighth.getTimeOut0Sunday()));
-		dateOfWeekThirtyEighth.setTuesdayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekTHrityEighth.getTimeIn0Tuesady(), daysOfWeekTHrityEighth.getTimeOut0Tuesday()));
-		dateOfWeekThirtyEighth.setThursdayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekTHrityEighth.getTimeIn0Thursday(), daysOfWeekTHrityEighth.getTimeOut0Thursday()));
-		dateOfWeekThirtyEighth.setFridayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekTHrityEighth.getTimeIn0Friday(), daysOfWeekTHrityEighth.getTimeOut0Friday()));
+		dateOfWeekThirtyEighth.setSaturdayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekThrityEighth.getTimeIn0Saturday(), daysOfWeekThrityEighth.getTimeOut0Saturday()));
+		dateOfWeekThirtyEighth.setSundayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekThrityEighth.getTimeIn0Sunday(), daysOfWeekThrityEighth.getTimeOut0Sunday()));
+		dateOfWeekThirtyEighth.setTuesdayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekThrityEighth.getTimeIn0Tuesady(), daysOfWeekThrityEighth.getTimeOut0Tuesday()));
+		dateOfWeekThirtyEighth.setThursdayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekThrityEighth.getTimeIn0Thursday(), daysOfWeekThrityEighth.getTimeOut0Thursday()));
+		dateOfWeekThirtyEighth.setFridayTotal(dateOfWeekThirtyEighth.hourlyConvertedIntoDaily(daysOfWeekThrityEighth.getTimeIn0Friday(), daysOfWeekThrityEighth.getTimeOut0Friday()));
+		
 		
 		WeeklyCalculations weekThirtyEight = new WeeklyCalculations(dateOfWeekThirtyEighth.getSaturdayTotal(), dateOfWeekThirtyEighth.getSundayTotal(), dateOfWeekThirtyEighth.getTuesdayTotal(), dateOfWeekThirtyEighth.getThursdayTotal(),dateOfWeekThirtyEighth.getFridayTotal());
-		
+		WeeklyCalculations weekThiryNinth = new WeeklyCalculations(datesOfWeekThirtyNinth.getSaturdayTotal(),datesOfWeekThirtyNinth.getTuesdayTotal(),datesOfWeekThirtyNinth.getThursdayTotal(),datesOfWeekThirtyNinth.getFridayTotal());
+		WeeklyCalculations weekFortieth = new WeeklyCalculations(datesOfWeekFortieth.getSaturdayTotal(), datesOfWeekFortieth.getSundayTotal(), datesOfWeekFortieth.getTuesdayTotal(), datesOfWeekFortieth.getWednesdayTotal(), datesOfWeekFortieth.getThursdayTotal(),datesOfWeekFortieth.getFridayTotal());
 		
 		//Non Autocmated calcaultions
 		//Constuctors of classes
@@ -645,6 +670,9 @@ public class Main {
 		 datesOfWeekThritySecond.setThursdayTotal(datesOfWeekThritySecond.hourlyConvertedIntoDaily(daysOfWeeksThritySecond.getTimeIn0Thursday(), daysOfWeeksThritySecond.getTimeOut0Thursday()));
 		 datesOfWeekThritySecond.setFridayTotal(datesOfWeekThritySecond.hourlyConvertedIntoDaily(daysOfWeeksThritySecond.getTimeIn0Friday(), daysOfWeeksThritySecond.getTimeOut0Friday(), daysOfWeeksThritySecond.getTimeIn1Friday(), daysOfWeeksThritySecond.getTimeOut1Friday()));
 		
+		  
+		 
+		 
 		 datesOfWeekThirtyThird.setSaturdayTotal(datesOfWeekThirtyThird.hourlyConvertedIntoDaily(daysOfWeekThritythird.getTimeIn0Saturday(), daysOfWeekThritythird.getTimeOut0Saturday()));
 		 datesOfWeekThirtyThird.setSundayTotal(datesOfWeekThirtyThird.hourlyConvertedIntoDaily(daysOfWeekThritythird.getTimeIn0Sunday(), daysOfWeekThritythird.getTimeOut0Sunday()));
 		 datesOfWeekThirtyThird.setMondayTotal(datesOfWeekThirtyThird.hourlyConvertedIntoDaily(daysOfWeekThritythird.getTimeIn0Monday(), daysOfWeekThritythird.getTimeOut0Monday()));
@@ -652,9 +680,6 @@ public class Main {
 		 datesOfWeekThirtyThird.setWednesdayTotal(datesOfWeekThirtyThird.hourlyConvertedIntoDaily(daysOfWeekThritythird.getTimeIn0Wednesday(), daysOfWeekThritythird.getTimeOut0Wednesday()));
 		 
 		 
-		 System.out.println(datesOfWeekThirtyThird.getSaturdayTotal() +" = Saturday | sundayTotal=" +datesOfWeekThirtyThird.getSundayTotal());
-		 System.out.println(datesOfWeekThirtyThird.getWednesdayTotal() + " = wedensday | thurday =" + datesOfWeekThirtyThird.getTuesdayTotal());
-		
 		 
 		 
 		 datesOfWeekThirtySixth.setSaturdayTotal(datesOfWeekThirtySixth.hourlyConvertedIntoDaily(daysOfWeekThirtySixth.getTimeIn0Saturday(), daysOfWeekThirtySixth.getTimeOut0Saturday()));
@@ -662,9 +687,7 @@ public class Main {
 		 datesOfWeekThirtySixth.setWednesdayTotal(datesOfWeekThirtySixth.hourlyConvertedIntoDaily(daysOfWeekThirtySixth.getTimeIn0Wednesday(), daysOfWeekThirtySixth.getTimeOut0Wednesday()));
 		 datesOfWeekThirtySixth.setThursdayTotal(datesOfWeekThirtySixth.hourlyConvertedIntoDaily(daysOfWeekThirtySixth.getTimeIn0Thursday(), daysOfWeekThirtySixth.getTimeOut0Thursday()));
 		 datesOfWeekThirtySixth.setFridayTotal(datesOfWeekThirtySixth.hourlyConvertedIntoDaily(daysOfWeekThirtySixth.getTimeIn0Friday(), daysOfWeekThirtySixth.getTimeOut0Friday()));
-		 System.out.println(datesOfWeekThirtySixth.getSaturdayTotal() +" = Saturday | sundayTotal=" +datesOfWeekThirtySixth.getSundayTotal());
-		 System.out.println(datesOfWeekThirtySixth.getWednesdayTotal() + " = wedensday | thurday =" + datesOfWeekThirtySixth.getThursdayTotal());
-		 System.out.println("Friday = "+ datesOfWeekThirtySixth.getFridayTotal());
+		
 		 
 	     //Constructors with parameters
 	     WeeklyCalculations weekOne = new WeeklyCalculations(datesOfWeekOne.getSaturdayTotal(),datesOfWeekOne.getSundayTotal(),datesOfWeekOne.getMondayTotal(),datesOfWeekOne.getThursdayTotal());
@@ -747,6 +770,12 @@ public class Main {
 	     weekThirtySixth.setWeeklyTotalily(weekThirtySixth.convertHourlyTotalIntoWeeklyTotal(weekThirtySixth.getSaturdayTotal(),weekThirtySixth.getSundayTotal(),weekThirtySixth.getMondayTotal(),weekThirtySixth.getTuesdayTotal(),weekThirtySixth.getFridayTotal()));
 	     weekThirtySeventh.setWeeklyTotalily(weekThirtySeventh.convertHourlyTotalIntoWeeklyTotal(weekThirtySeventh.getSaturdayTotal(),weekThirtySeventh.getSundayTotal(),weekThirtySeventh.getMondayTotal(),weekThirtySeventh.getTuesdayTotal(),weekThirtySeventh.getThursdayTotal(),weekThirtySeventh.getFridayTotal()));
 	     weekThirtyEighth.setWeeklyTotalily(weekThirtyEighth.convertHourlyTotalIntoWeeklyTotal(weekThirtyEighth.getSaturdayTotal(),weekThirtyEighth.getSundayTotal(),weekThirtyEighth.getMondayTotal(),weekThirtyEighth.getTuesdayTotal(),weekThirtyEighth.getFridayTotal()));
+	     weekThiryNinth.setWeeklyTotalily(weekThiryNinth.convertHourlyTotalIntoWeeklyTotal(weekThiryNinth.getSaturdayTotal(),weekThiryNinth.getSundayTotal(),weekThiryNinth.getMondayTotal(),weekThiryNinth.getFridayTotal()));
+	     weekFortieth.setWeeklyTotalily(weekFortieth.convertHourlyTotalIntoWeeklyTotal(weekFortieth.getSaturdayTotal(),weekFortieth.getSundayTotal(),weekFortieth.getMondayTotal(),weekFortieth.getTuesdayTotal(),weekFortieth.getThursdayTotal(),weekFortieth.getFridayTotal()));
+	    
+	     
+	     
+	     
 	     
 	     weekOne.setSummedHours(weekOne.WeeklyTotal(weekOne.getWeeklyTotalily()));
 	     weekTwo.setSummedHours(weekTwo.WeeklyTotal(weekOne.getSummedHours(),weekTwo.getWeeklyTotalily()));
@@ -786,6 +815,9 @@ public class Main {
 	     weekThirtySixth.setSummedHours(weekThirtySixth.WeeklyTotal(weekThirtySixth.getWeeklyTotalily(),weekThirtyFifth.getSummedHours()));
 	     weekThirtySeventh.setSummedHours(weekThirtySeventh.WeeklyTotal(weekThirtySeventh.getWeeklyTotalily(),weekThirtySixth.getSummedHours()));
 	     weekThirtyEighth.setSummedHours(weekThirtyEighth.WeeklyTotal(weekThirtyEighth.getWeeklyTotalily(),weekThirtySeventh.getSummedHours()));
+	     weekThiryNinth.setSummedHours(weekThiryNinth.convertHourlyTotalIntoWeeklyTotal(weekThiryNinth.getWeeklyTotalily(),weekThirtyEighth.getSummedHours()));
+	     weekFortieth.setSummedHours(weekFortieth.convertHourlyTotalIntoWeeklyTotal(weekFortieth.getWeeklyTotalily(),weekThiryNinth.getSummedHours()));
+	     
 	     
 	     
 	     
@@ -828,6 +860,11 @@ public class Main {
 	     weekThirtySixth.setSummedHoursMinusTotalHours(weekThirtySixth.WeeklyTotalMinusTotalAmountOfHours(weekThirtySixth.getSummedHours()));
 	     weekThirtySeventh.setSummedHoursMinusTotalHours(weekThirtySeventh.WeeklyTotalMinusTotalAmountOfHours(weekThirtySeventh.getSummedHours()));
 	     weekThirtyEighth.setSummedHoursMinusTotalHours(weekThirtyEighth.WeeklyTotalMinusTotalAmountOfHours(weekThirtyEighth.getSummedHours()));
+	     weekThiryNinth.setSummedHoursMinusTotalHours(weekThiryNinth.WeeklyTotalMinusTotalAmountOfHours(weekThiryNinth.getSummedHours()));
+	     weekFortieth.setSummedHoursMinusTotalHours(weekFortieth.WeeklyTotalMinusTotalAmountOfHours(weekFortieth.getSummedHours()));
+	     
+	     
+	     
 	     
 	     weekTwo.setPaychecks(weekOne.paycheck(weekOne.getWeeklyTotalily(),weekTwo.getWeeklyTotalily()));
 	     weekFour.setPaychecks(weekThree.paycheck(weekFour.getWeeklyTotalily(), weekFour.getWeeklyTotalily()));
@@ -848,6 +885,8 @@ public class Main {
 	     weekThirtyFourth.setPaychecks(weekThirtyFifth.paycheck(weekThirtyThird.getWeeklyTotalily(), weekThirtyFourth.getWeeklyTotalily()));
 	     weekThirtySixth.setPaychecks(weekThirtySixth.paycheck(weekThirtySixth.getWeeklyTotalily(), weekThirtyFifth.getWeeklyTotalily()));
 	     weekThirtyEighth.setPaychecks(weekThirtyEight.paycheck(weekThirtyEighth.getWeeklyTotalily(), weekThirtySeventh.getWeeklyTotalily()));
+	     weekFortieth.setPaychecks(weekFortieth.paycheck(weekFortieth.getWeeklyTotalily(), weekThiryNinth.getWeeklyTotalily()));
+	     
 	     
 	     System.out.println(" # of weeks |     dates        | hours  |  hours | hours - 1560 | paychecks");  
 	     System.out.printf("    1       | Jan 01 - Jan 07  | %.2f  |   %.2f     |    %.2f   | %n" , weekOne.getWeeklyTotalily() , weekOne.getSummedHours(),weekOne.getSummedHoursMinusTotalHours());
@@ -889,7 +928,9 @@ public class Main {
 	     System.out.printf("    35      | Sep  3 - Sep  9  | %.2f   |   %.2f    |    %.2f    | %n", weekThirtyFifth.getWeeklyTotalily(),weekThirtyFifth.getSummedHours(),weekThirtyFifth.getSummedHoursMinusTotalHours());
 	     System.out.printf("    36      | Sep 10 - Sep 16  | %.2f  |   %.2f    |    %.2f    | %.2f %n",weekThirtySixth.getWeeklyTotalily(),weekThirtySixth.getSummedHours(), weekThirtySixth.getSummedHoursMinusTotalHours(),weekThirtySixth.getPaychecks());
 	     System.out.printf("    37      | Sep 17 - Sep 23  | %.2f  |   %.2f    |    %.2f    | %n", weekThirtySeventh.getWeeklyTotalily(),weekThirtySeventh.getSummedHours(),weekThirtySeventh.getSummedHoursMinusTotalHours());
-	     System.out.printf("    38      | Sep 24   Sep 30  | %.2f  |   %.2f    |    %.2f    | %.2f %n",weekThirtyEighth.getWeeklyTotalily(),weekThirtyEighth.getSummedHours(),weekThirtyEighth.getSummedHoursMinusTotalHours(),weekThirtyEighth.getPaychecks());
+	     System.out.printf("    38      | Sep 24 - Sep 30  | %.2f  |   %.2f    |    %.2f    | %.2f %n",weekThirtyEighth.getWeeklyTotalily(),weekThirtyEighth.getSummedHours(),weekThirtyEighth.getSummedHoursMinusTotalHours(),weekThirtyEighth.getPaychecks());
+	     System.out.printf("    39      | Oct  1 - Oct  7  | %.2f  |   %.2f    |    %.2f    | %n",weekThiryNinth.getWeeklyTotalily(),weekThiryNinth.getSummedHours(),weekThiryNinth.getSummedHoursMinusTotalHours());
+	     System.out.printf("    40      | Oct  8 - Oct 14  | %.2f  |   %.2f    |    %.2f    | %.2f %n" ,weekFortieth.getWeeklyTotalily(),weekFortieth.getSummedHours(),weekFortieth.getSummedHoursMinusTotalHours(),weekFortieth.getPaychecks());
 	}
 
 }

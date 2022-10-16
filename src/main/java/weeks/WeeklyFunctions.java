@@ -50,8 +50,8 @@ public class WeeklyFunctions extends WeeklyCalculations {
 	}
 	@Override
 	public String toString() {
-		return "WeeklyFunctions [weeklyId="+ weeklyId +",dates=" +dates + ",weeklyTotal=" + weeklyTotal +
-				", summedHours=" + summedHours+"summedTotalHoursMinusTotalHours="+summedTotalHoursMinusTotalHours+ "]";
+		return "WeeklyFunctions [weeklyId="+ weeklyId +",dates=" +dates + ", weeklyTotal=" + weeklyTotal +
+				", summedHours=" + summedHours+", summedTotalHoursMinusTotalHours="+summedTotalHoursMinusTotalHours+ "]";
 	}
 	@Override
 	public int hashCode() {

@@ -70,6 +70,7 @@ public class WeeklyDAOImpl implements WeeklyDAO{
 			preparedStatement.setInt(1, id);
 			ResultSet rs = preparedStatement.executeQuery();
 			if(rs.next()) {
+				weeks = new WeeklyFunctions();
 				weeks.setId(rs.getInt("id"));
 				weeks.setWeeklyTotalily(newWeeklyTime);
 			}
@@ -81,15 +82,22 @@ public class WeeklyDAOImpl implements WeeklyDAO{
 	}
 
 	public boolean deleteWeekbyID(int id) throws DatabaseConnectivityExecption {
+		WeeklyFunctions weeks = null;
 		try (Connection connection = ConnectionUtililties.getConnection()){
 			String sql = "delete * from jdbc_timeData.weekData where id =?";
 					PreparedStatement preparedStatement = connection.prepareStatement(sql);
+					ResultSet rs = preparedStatement.executeQuery();
 					if(rs.next()) {
-						
+						weeks = new WeeklyFunctions();
+						weeks.setId(rs.getInt("id"));
+					}else {
+						return false;
 					}
-			
+		} catch(SQLException | IOException e) {
+			throw  new DatabaseConnectivityExecption("Something went wrong with establising a connection");
+		
 		}
-		return false;
+		return true;
 	}
 
 	public List<WeeklyFunctions> getAllWeeklyCalculation() throws DatabaseConnectivityExecption {

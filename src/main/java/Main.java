@@ -2,10 +2,12 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.logging.Logger;
 
+import dao.WeeklyDAOImpl;
 import days.DailyCalculation;
 import hours.HourCalculation;
 import scanners.ScanClass;
 import weeks.WeeklyCalculations;
+import weeks.WeeklyFunctions;
 
 public class Main {
 	private static Logger log = Logger.getLogger("Main.class");
@@ -887,6 +889,11 @@ public class Main {
 	     weekThirtyEighth.setPaychecks(weekThirtyEight.paycheck(weekThirtyEighth.getWeeklyTotalily(), weekThirtySeventh.getWeeklyTotalily()));
 	     weekFortieth.setPaychecks(weekFortieth.paycheck(weekFortieth.getWeeklyTotalily(), weekThiryNinth.getWeeklyTotalily()));
 	     
+	     WeeklyFunctions WeekFunOne = new WeeklyFunctions(0, "Jan 1 - Jan 7", weekOne.getWeeklyTotalily(), weekOne.getSummedHours(), weekOne.getSummedHoursMinusTotalHours());
+	     System.out.println(WeekFunOne.toString());
+	     //Will add back in once I figure out what is going wrong
+	     //WeeklyDAOImpl weekCRUDOpers = new WeeklyDAOImpl();
+	     //weekCRUDOpers.createWeeklyDao(WeekFunOne);
 	     
 	     System.out.println(" # of weeks |     dates        | hours  |  hours | hours - 1560 | paychecks");  
 	     System.out.printf("    1       | Jan 01 - Jan 07  | %.2f  |   %.2f     |    %.2f   | %n" , weekOne.getWeeklyTotalily() , weekOne.getSummedHours(),weekOne.getSummedHoursMinusTotalHours());

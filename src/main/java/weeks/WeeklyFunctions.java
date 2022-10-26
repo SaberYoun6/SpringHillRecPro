@@ -17,6 +17,9 @@ public class WeeklyFunctions extends WeeklyCalculations {
 		this.summedHours = summedHours;
 		this.summedTotalHoursMinusTotalHours = summedTotalHoursMinusTotalHours;
 	}
+	public WeeklyFunctions(int weeklyId) {
+		this.weeklyId = weeklyId;
+	}
 	public double getWeeklyTotal() {
 		return weeklyTotal;
 	}

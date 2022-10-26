@@ -322,7 +322,7 @@ public class HourCalculation implements Hours {
 			this.setTimeIn1Wednesday(getDayIn1());
 			this.setTimeOut1Wednesday(getDayOut1());
 			break;
-		case "thursday":
+		case "Thursday":
 			this.setDayIn0(ar[0]);
 			this.setDayOut0(ar[1]);
 			this.setDayIn1(ar[2]);

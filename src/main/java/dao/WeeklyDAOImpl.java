@@ -17,24 +17,19 @@ import weeks.WeeklyFunctions;
 public class WeeklyDAOImpl implements WeeklyDAO{
 
 
-	public int createWeeklyDao(WeeklyFunctions week) throws DatabaseConnectivityExecption {
+	public int createWeeklyDao(WeeklyFunctions week, Connection connection) throws DatabaseConnectivityExecption, SQLException {
 		int createCount =0;
-		try(Connection connection = ConnectionUtililties.getConnection()){
-			String sql = "INSERT INTO jdbc_timeData.WeekData (date,WeekilyTotal,SummedTotalHours,summedTotalHoursMinusTotalHours"+
-		                              "VALUES(?,?,?,?)";
+			String sql = "INSERT INTO weekdata (id,date,weeks_total,summed_hours,summed_hours_minus_total_hours)"+
+		                              "VALUES(?,?,?,?,?)";
 			PreparedStatement preparedStatement= connection.prepareStatement(sql);
-			
-			preparedStatement.setString(1, week.getDates());
-			preparedStatement.setDouble(2, week.getWeeklyTotal());
-			preparedStatement.setDouble(3, week.getSummedHours());
-			preparedStatement.setDouble(4, week.getSummedTotalHoursMinusTotalHours());
+			preparedStatement.setInt(1, week.getWeeklyId());
+			preparedStatement.setString(2, week.getDates());
+			preparedStatement.setDouble(3, week.getWeeklyTotal());
+			preparedStatement.setDouble(4, week.getSummedHours());
+			preparedStatement.setDouble(5, week.getSummedTotalHoursMinusTotalHours());
 			
 			createCount=preparedStatement.executeUpdate();
 			
-			
-		} catch (IOException|SQLException e) {
-			throw new DatabaseConnectivityExecption("Something went wrong with establishing a connection");
-		}
 		return createCount;
 	}
 
@@ -42,7 +37,7 @@ public class WeeklyDAOImpl implements WeeklyDAO{
 		WeeklyFunctions weeks = null;
 		try(Connection connection = ConnectionUtililties.getConnection())
 		{
-			String sql = "SELECT * FROM jdbc_timeData.WeekData WHERE id = ?";
+			String sql = "SELECT * FROM weekdata WHERE id = ?";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setInt(1, id);
 			ResultSet rs = preparedStatement.executeQuery();
@@ -65,14 +60,15 @@ public class WeeklyDAOImpl implements WeeklyDAO{
 	public int updateWeeklyCalculation(int id, double newWeeklyTime) throws DatabaseConnectivityExecption {
 		WeeklyFunctions weeks = null;
 		try (Connection connection = ConnectionUtililties.getConnection()){
-			String sql = "UPDATE * FROM jdbc_timeData.WeekData set WeeklTimes= ? Where id = ?";
+			String sql = "UPDATE * FROM weekdata set WeeklTimes= ? Where id = ?";
 			PreparedStatement preparedStatement =  connection.prepareStatement(sql);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setDouble(1, newWeeklyTime);
+			preparedStatement.setInt(2, id);
 			ResultSet rs = preparedStatement.executeQuery();
 			if(rs.next()) {
 				weeks = new WeeklyFunctions();
 				weeks.setId(rs.getInt("id"));
-				weeks.setWeeklyTotalily(newWeeklyTime);
+				weeks.setWeeklyTotalily(rs.getDouble("new_weekly_time"));
 			}
 		} catch (SQLException |IOException e) {
 			throw new DatabaseConnectivityExecption("Something went wrong with estalishing a connection");
@@ -84,9 +80,10 @@ public class WeeklyDAOImpl implements WeeklyDAO{
 	public boolean deleteWeekbyID(int id) throws DatabaseConnectivityExecption {
 		WeeklyFunctions weeks = null;
 		try (Connection connection = ConnectionUtililties.getConnection()){
-			String sql = "delete * from jdbc_timeData.weekData where id =?";
+			String sql = "delete from weekdata where id =(?)";
 					PreparedStatement preparedStatement = connection.prepareStatement(sql);
 					ResultSet rs = preparedStatement.executeQuery();
+					preparedStatement.setInt(1,id);
 					if(rs.next()) {
 						weeks = new WeeklyFunctions();
 						weeks.setId(rs.getInt("id"));
@@ -103,7 +100,7 @@ public class WeeklyDAOImpl implements WeeklyDAO{
 	public List<WeeklyFunctions> getAllWeeklyCalculation() throws DatabaseConnectivityExecption {
 		List<WeeklyFunctions> weekList =new ArrayList<>();
 		try (Connection connection = ConnectionUtililties.getConnection()) {
-			String sql = "Select * From jdbc_timeData.WeekData";
+			String sql = "Select * From weekdata";
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			ResultSet rs = preparedStatement.executeQuery();
 			while(rs.next()) {

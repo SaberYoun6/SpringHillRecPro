@@ -9,7 +9,6 @@ public class WeeklyCalculations extends DailyCalculation implements  Week {
 	private final static double totalHours= 1560.0;
 	private double summedHours,summedHoursMinusTotalHours,weeklyTotalily,paychecks=0.0;
 	private String dayOfTheWeek= null;
-	private int id;
 	
 	public double getPaychecks() {
 		return paychecks;
@@ -18,7 +17,7 @@ public class WeeklyCalculations extends DailyCalculation implements  Week {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(dayOfTheWeek, fridayTotal, id, mondayTotal, paychecks, saturdayTotal, summedHours,
+		return Objects.hash(dayOfTheWeek, fridayTotal, mondayTotal, paychecks, saturdayTotal, summedHours,
 				summedHoursMinusTotalHours, sundayTotal, thursdayTotal, tuesdayTotal, wednesdayTotal, weeklyTotalily);
 	}
 
@@ -33,7 +32,7 @@ public class WeeklyCalculations extends DailyCalculation implements  Week {
 			return false;
 		WeeklyCalculations other = (WeeklyCalculations) obj;
 		return Objects.equals(dayOfTheWeek, other.dayOfTheWeek)
-				&& Double.doubleToLongBits(fridayTotal) == Double.doubleToLongBits(other.fridayTotal) && id == other.id
+				&& Double.doubleToLongBits(fridayTotal) == Double.doubleToLongBits(other.fridayTotal)
 				&& Double.doubleToLongBits(mondayTotal) == Double.doubleToLongBits(other.mondayTotal)
 				&& Double.doubleToLongBits(paychecks) == Double.doubleToLongBits(other.paychecks)
 				&& Double.doubleToLongBits(saturdayTotal) == Double.doubleToLongBits(other.saturdayTotal)
@@ -147,17 +146,6 @@ public class WeeklyCalculations extends DailyCalculation implements  Week {
 	public void setDayOfTheWeek(String dayOfTheWeek) {
 		this.dayOfTheWeek = dayOfTheWeek;
 	}
-
-
-	public int getId() {
-		return id;
-	}
-
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 
 	public WeeklyCalculations() {
 		super();

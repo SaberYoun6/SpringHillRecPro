@@ -31,9 +31,9 @@ public class ScanClass implements Scans {
 		String [] tempData = new String[2];
 		String [] tempData1 = new String[2];
 		for (String messages : message) {
-			tempData = messages.split("St|Nd|Rd|Th ");
+			tempData = messages.split("St|Nd|Rd|th ");
 			tempData1 = tempData[1].split(" - ");
-			date = tempData[0];
+			date =tempData[0];
 			dateInDouble = Double.valueOf(tempData1[0]);
 			dateOutDouble = Double.valueOf(tempData1[1]);
 			

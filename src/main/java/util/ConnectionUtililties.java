@@ -20,11 +20,11 @@ public class ConnectionUtililties {
 		Properties property = new Properties();
 		property.load(fis);
 		
-		String url =(String) property.get("url");
-		String user = (String) property.get("user");
-		String password = (String) property.get("password");
+		String urls = (String) property.get("db_url");//(String) System.getenv("POSTDB_URL");
+		String user = (String) property.get("db_user");//System.getenv("POSTDB_USER");
+		String password = (String) property.get("db_pass");//System.getenv("POSTDB_PASS");
 		
-		Connection connection = DriverManager.getConnection(url,user,password);
+		Connection connection = DriverManager.getConnection(urls,user,password);
 		
 		return connection;
 		
